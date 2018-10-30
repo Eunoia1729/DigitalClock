@@ -13,7 +13,9 @@ the clock and gives a wake-up alarm to you on every morning by downloading a par
 and replayed until you wake up and closes the wake-up call.
 
 **Specific Technology**
+
 Java, Swing
 
 **Project Tasks**
+
 Use case analysis, Design (Using CRC & Class Diagrams), Implementation, and User Interface.
