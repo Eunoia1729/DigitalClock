@@ -14,6 +14,7 @@ class Time {
     private int month;
     private int year;
     private String day;
+    private int date;
     private String timeZone;
     
     Time(String timeZone){
@@ -26,6 +27,7 @@ class Time {
         dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
         month = calendar.get(Calendar.MONTH);
         year = calendar.get(Calendar.YEAR);
+        date= calendar.get(Calendar.DATE);
     }
     public void setTimeZone(String timeZone)
     {
@@ -68,5 +70,29 @@ class Time {
     public String toString(){
         String res = stringConvert(hours)+":"+stringConvert(minutes)+":"+stringConvert(seconds);
         return res;
+    }
+    public String daysToStirng()
+    {
+        String ret= getMonthName(month)+" "+stringConvert(date)+", "+stringConvert(year);
+        return ret;
+    }
+    public String getMonthName(int index)
+    {
+        switch (index)
+        {
+            case 1:return "January";
+            case 2:return "February";
+            case 3:return "March";
+            case 4:return "April";
+            case 5:return "May";
+            case 6:return "June";
+            case 7:return "July";
+            case 8:return "August";
+            case 9:return "September";
+            case 10:return "October";
+            case 11:return "November";
+            case 12:return "December";   
+        }
+        return "";
     }
 }

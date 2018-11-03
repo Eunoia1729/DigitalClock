@@ -13,8 +13,11 @@ public class Clock {
     
     public Time getTime(String timeZone) {
         time = new Time(timeZone);
-        //time.setTimeZone(timeZone);
-        //System.out.println(timeZone);
         return time;
+    }
+    
+    public String getDay()
+    {
+        return time.daysToStirng();
     }
 }
