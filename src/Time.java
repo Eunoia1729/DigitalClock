@@ -14,15 +14,22 @@ class Time {
     private int month;
     private int year;
     private String day;
+    private String timeZone;
     
-    Time(){
-        Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone("IST"));
+    Time(String timeZone){
+        //System.out.println(timeZone);
+        this.timeZone=timeZone;
+        Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone(timeZone));
         hours = calendar.get(Calendar.HOUR);
         minutes = calendar.get(Calendar.MINUTE);
         seconds = calendar.get(Calendar.SECOND);
         dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
         month = calendar.get(Calendar.MONTH);
         year = calendar.get(Calendar.YEAR);
+    }
+    public void setTimeZone(String timeZone)
+    {
+        this.timeZone=timeZone;
     }
     public int getHours() {
         return hours;

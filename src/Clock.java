@@ -11,8 +11,10 @@ public class Clock {
         
     }
     
-    public Time getTime() {
-        time = new Time();
+    public Time getTime(String timeZone) {
+        time = new Time(timeZone);
+        //time.setTimeZone(timeZone);
+        //System.out.println(timeZone);
         return time;
     }
 }
