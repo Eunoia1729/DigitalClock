@@ -142,6 +142,7 @@ public class stopwatch extends javax.swing.JFrame implements Runnable
             }
         });
 
+        timeList.setEditable(false);
         timeList.setColumns(20);
         timeList.setRows(5);
         jScrollPane1.setViewportView(timeList);
