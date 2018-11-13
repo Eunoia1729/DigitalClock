@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 /**
  *
  * @author 6ix
@@ -18,9 +20,10 @@ public class MainClass extends javax.swing.JFrame {
                     timeLabel.setText(clock.getTime(timeZone).toString());
                     String day=clock.getDay();
                     dateLabel.setText(day);
-                    //System.out.println(day);
-                    //System.out.println(timeLabel.getText());
-                    //timeLabel.setText();
+                    timeLabel.setBackground(clock.getProperties().getBgColor());
+                    timeLabel.setForeground(clock.getProperties().getTextColor());
+                    timeLabel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),3));
+                    timeLabel.setFont(clock.getProperties().getFont());
                 }
             }
         }.start();
@@ -37,6 +40,13 @@ public class MainClass extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         timeLabel.setFont(new java.awt.Font("AnjaliOldLipi", 1, 48)); // NOI18N
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -125,6 +135,11 @@ public class MainClass extends javax.swing.JFrame {
         //watch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         watch.setVisible(true);
     }//GEN-LAST:event_generateStopwatchActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialog settingsDialog = new Settings(clock);
+        settingsDialog.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
