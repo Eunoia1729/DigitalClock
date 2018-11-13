@@ -1,4 +1,10 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+/**
+ *
+ * @author 6ix
+ */
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -17,7 +23,7 @@ public class MainClass extends javax.swing.JFrame {
         initComponents();
         timeLabel.setFont(new Font("DS-Digital", Font.BOLD, 48));
         new Thread(){
-            public void run(){ 
+            public void run(){
                 while(true){
                     timeLabel.setText(clock.getTime(timeZone).toString());
                     String day=clock.getDay();
@@ -33,23 +39,32 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         timeLabel = new javax.swing.JLabel();
         timeZoneCombo = new javax.swing.JComboBox<>();
         dateLabel = new javax.swing.JLabel();
         generateStopwatch = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        timeLabel.setFont(new java.awt.Font("AnjaliOldLipi", 1, 48)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
 
         timeLabel.setFont(new java.awt.Font("Cambria Math", 1, 48)); // NOI18N
         timeLabel.setForeground(new java.awt.Color(0, 255, 255));
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        timeLabel.setText("00:00:00");
         timeLabel.setText("00:00:00");
         timeLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -75,6 +90,13 @@ public class MainClass extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Ebrima", 1, 11)); // NOI18N
         jButton2.setText("ALARM");
+
+        jButton3.setText("TIMER");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,6 +161,17 @@ public class MainClass extends javax.swing.JFrame {
         //watch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         watch.setVisible(true);
     }//GEN-LAST:event_generateStopwatchActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialog settingsDialog = new Settings(clock);
+        settingsDialog.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        GUITimer timer=new GUITimer();
+        timer.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
