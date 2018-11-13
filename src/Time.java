@@ -29,6 +29,13 @@ class Time {
         year = calendar.get(Calendar.YEAR);
         date= calendar.get(Calendar.DATE);
     }
+    Time(String hours1, String minutes1, String seconds1, String day1)
+    {
+        this.hours = Integer.parseInt(hours1);
+        this.minutes = Integer.parseInt(minutes1);
+        this.seconds = Integer.parseInt(seconds1);
+        this.day = day1;
+    }
     public void setTimeZone(String timeZone)
     {
         this.timeZone=timeZone;

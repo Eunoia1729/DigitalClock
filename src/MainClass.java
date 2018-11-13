@@ -9,8 +9,10 @@ public class MainClass extends javax.swing.JFrame {
      * Creates new form MainClass
      */
     private Clock clock = new Clock();
+    private alarmClock alarmC = new alarmClock();
     private String timeZone="IST";
     public MainClass() {
+        int i = 0;
         initComponents();
         new Thread(){
             public void run(){    
@@ -21,6 +23,7 @@ public class MainClass extends javax.swing.JFrame {
                     //System.out.println(day);
                     //System.out.println(timeLabel.getText());
                     //timeLabel.setText();
+                    alarmC.checkAlarm(clock.getTime(timeZone), day);
                 }
             }
         }.start();
@@ -34,6 +37,7 @@ public class MainClass extends javax.swing.JFrame {
         timeZoneCombo = new javax.swing.JComboBox<>();
         dateLabel = new javax.swing.JLabel();
         generateStopwatch = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +61,13 @@ public class MainClass extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("ALARM");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,6 +88,8 @@ public class MainClass extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(generateStopwatch, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(80, 80, 80)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(timeZoneCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -86,7 +99,7 @@ public class MainClass extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(timeZoneCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,9 +109,13 @@ public class MainClass extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(generateStopwatch, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(generateStopwatch, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(57, 57, 57))
         );
+
+        jButton2.getAccessibleContext().setAccessibleName("alarmButton");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,6 +133,11 @@ public class MainClass extends javax.swing.JFrame {
         //watch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         watch.setVisible(true);
     }//GEN-LAST:event_generateStopwatchActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        alarmC.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,11 +165,11 @@ public class MainClass extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainClass().setVisible(true);
+                
             }
         });
     }
@@ -156,6 +178,7 @@ public class MainClass extends javax.swing.JFrame {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton generateStopwatch;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JComboBox<String> timeZoneCombo;
     // End of variables declaration//GEN-END:variables
