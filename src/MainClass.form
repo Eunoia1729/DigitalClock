@@ -101,7 +101,7 @@
           <Font name="AnjaliOldLipi" size="48" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value=":00:00"/>
+        <Property name="text" type="java.lang.String" value="00:00:00"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="timeZoneCombo">
