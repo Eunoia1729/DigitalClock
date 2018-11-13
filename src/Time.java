@@ -29,6 +29,10 @@ class Time {
         year = calendar.get(Calendar.YEAR);
         date= calendar.get(Calendar.DATE);
     }
+    Time()
+    {
+        
+    }
     public void setTimeZone(String timeZone)
     {
         this.timeZone=timeZone;
