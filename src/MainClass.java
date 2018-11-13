@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.GraphicsEnvironment;
 import java.io.*;
@@ -9,10 +8,6 @@ import java.awt.Font;
  * @author 6ix
  */
 import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import java.awt.Font;
 
 public class MainClass extends javax.swing.JFrame {
 
@@ -45,9 +40,10 @@ public class MainClass extends javax.swing.JFrame {
                     timeLabel.setText(clock.getTime(timeZone).toString());
                     String day=clock.getDay();
                     dateLabel.setText(day);
-                    //System.out.println(day);
-                    //System.out.println(timeLabel.getText());
-                    //timeLabel.setText();
+                    timeLabel.setBackground(clock.getProperties().getBgColor());
+                    timeLabel.setForeground(clock.getProperties().getTextColor());
+                    timeLabel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),5));
+                    timeLabel.setFont(clock.getProperties().getFont());
                 }
             }
         }.start();
@@ -64,7 +60,6 @@ public class MainClass extends javax.swing.JFrame {
         alarmBtn = new javax.swing.JButton();
         timerBtn = new javax.swing.JButton();
 
-        jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -189,12 +184,6 @@ public class MainClass extends javax.swing.JFrame {
         settingsDialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        GUITimer timer=new GUITimer();
-        timer.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void timerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timerBtnActionPerformed
         new GUITimer().setVisible(true);
     }//GEN-LAST:event_timerBtnActionPerformed
@@ -239,8 +228,6 @@ public class MainClass extends javax.swing.JFrame {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton generateStopwatch;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JComboBox<String> timeZoneCombo;
     private javax.swing.JButton timerBtn;
