@@ -1,4 +1,3 @@
-
 import java.util.TimeZone;
 /**
  *
@@ -6,9 +5,18 @@ import java.util.TimeZone;
  */
 public class Clock {
     private Time time;
-    
+    private Properties properties;
+
+    public Properties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
     Clock(){
-        
+        properties = new Properties();
     }
     
     public Time getTime(String timeZone) {
