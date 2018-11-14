@@ -14,7 +14,7 @@ public class Clock {
     public void setProperties(Properties properties) {
         this.properties = properties;
     }
-    
+
     Clock(){
         properties = new Properties();
     }

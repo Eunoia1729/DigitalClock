@@ -1,4 +1,5 @@
-
+import jaco.mp3.player.MP3Player;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -8,10 +9,43 @@ import java.util.ArrayList;
 public class alarmClock extends javax.swing.JFrame {
 
     private ArrayList<Time> alarms;
+    private String day1, hours1, minutes1, seconds1;
+    private ArrayList<AlarmSongs> aSongs;
+    private daySong dSong;
     public alarmClock() {
         initComponents();
+        alarms = new ArrayList<Time>(1000);
+        aSongs = new ArrayList<AlarmSongs>(1000);
+        dSong = new daySong(aSongs);
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
-
+    ArrayList<Time> getAlarmList()
+    {
+       return alarms;    
+    }
+    void checkAlarm(Time Time1, String day)
+    {
+        int i, j;
+        String song1 = "";
+        for(i = 0; i < alarms.size(); ++i)
+        {
+            if( alarms.get(i).getHours() == Time1.getHours() && alarms.get(i).getMinutes() == Time1.getMinutes() && 
+                    alarms.get(i).getSeconds() == Time1.getSeconds() && alarms.get(i).getFlag() == 0
+                    && alarms.get(i).getDay().compareTo(Time1.getDay()) == 0)
+            {
+                alarms.get(i).setFlag(1);
+                for(j = 0; j < 7; ++j)
+                {
+                    if( alarms.get(i).getDay().compareTo(aSongs.get(j).getDay()) == 0)
+                    {
+                        song1 = aSongs.get(j).getSong();
+                    }
+                }
+                MP3Player mp3player = new MP3Player(new File(song1));
+                mp3player.play();
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -22,15 +56,15 @@ public class alarmClock extends javax.swing.JFrame {
     private void initComponents() {
 
         label1 = new java.awt.Label();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        hour1 = new javax.swing.JTextField();
+        minute1 = new javax.swing.JTextField();
+        second1 = new javax.swing.JTextField();
+        addAlarmButton = new javax.swing.JButton();
+        editAlarmButton = new javax.swing.JButton();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        settingsButton = new javax.swing.JButton();
+        daySelect = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,33 +73,43 @@ public class alarmClock extends javax.swing.JFrame {
         label1.setForeground(new java.awt.Color(255, 255, 255));
         label1.setText("ALARM MANAGER");
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("00");
-        jTextField1.setToolTipText("");
-
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("00");
-
-        jTextField3.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("00");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        hour1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        hour1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        hour1.setText("00");
+        hour1.setToolTipText("");
+        hour1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                hour1ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Add Alarm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        minute1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        minute1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        minute1.setText("00");
+
+        second1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        second1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        second1.setText("00");
+        second1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                second1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Edit Alarms");
-        jButton2.setToolTipText("");
+        addAlarmButton.setText("Add Alarm");
+        addAlarmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAlarmButtonActionPerformed(evt);
+            }
+        });
+
+        editAlarmButton.setText("Edit Alarms");
+        editAlarmButton.setToolTipText("");
+        editAlarmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editAlarmButtonActionPerformed(evt);
+            }
+        });
 
         label2.setAlignment(java.awt.Label.CENTER);
         label2.setFont(new java.awt.Font("FreeSerif", 1, 48)); // NOI18N
@@ -77,15 +121,20 @@ public class alarmClock extends javax.swing.JFrame {
         label3.setForeground(new java.awt.Color(255, 255, 255));
         label3.setText(":");
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
-        jButton3.setToolTipText("");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
+        settingsButton.setToolTipText("");
+        settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                settingsButtonActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", " " }));
+        daySelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", " " }));
+        daySelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                daySelectActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,28 +144,28 @@ public class alarmClock extends javax.swing.JFrame {
                 .addGap(121, 121, 121)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(daySelect, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addAlarmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editAlarmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(hour1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1)
                                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(minute1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(second1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -135,45 +184,57 @@ public class alarmClock extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(minute1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(hour1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(second1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addAlarmButton)
+                    .addComponent(daySelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(editAlarmButton)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
         label1.getAccessibleContext().setAccessibleName("clockName");
         label1.getAccessibleContext().setAccessibleDescription("");
-        jTextField1.getAccessibleContext().setAccessibleName("hoursField");
-        jTextField2.getAccessibleContext().setAccessibleName("minutesField");
-        jTextField3.getAccessibleContext().setAccessibleName("secondsField");
-        jButton1.getAccessibleContext().setAccessibleName("addAlarm");
-        jButton2.getAccessibleContext().setAccessibleName("editAlarms");
-        jButton3.getAccessibleContext().setAccessibleName("alarmSettings");
-        jComboBox1.getAccessibleContext().setAccessibleName("weekDay");
+        hour1.getAccessibleContext().setAccessibleName("hoursField");
+        minute1.getAccessibleContext().setAccessibleName("minutesField");
+        second1.getAccessibleContext().setAccessibleName("secondsField");
+        addAlarmButton.getAccessibleContext().setAccessibleName("addAlarm");
+        editAlarmButton.getAccessibleContext().setAccessibleName("editAlarms");
+        settingsButton.getAccessibleContext().setAccessibleName("alarmSettings");
+        daySelect.getAccessibleContext().setAccessibleName("weekDay");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void second1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_second1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_second1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
+         dSong.setVisible(true);
+    }//GEN-LAST:event_settingsButtonActionPerformed
+
+    private void addAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlarmButtonActionPerformed
+         alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
+    }//GEN-LAST:event_addAlarmButtonActionPerformed
+
+    private void editAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAlarmButtonActionPerformed
+         //edit alarm here
+    }//GEN-LAST:event_editAlarmButtonActionPerformed
+
+    private void daySelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daySelectActionPerformed
+        day1 = daySelect.getSelectedItem().toString();
+    }//GEN-LAST:event_daySelectActionPerformed
+
+    private void hour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hour1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_hour1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,15 +272,15 @@ public class alarmClock extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton addAlarmButton;
+    private javax.swing.JComboBox<String> daySelect;
+    private javax.swing.JButton editAlarmButton;
+    private javax.swing.JTextField hour1;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
+    private javax.swing.JTextField minute1;
+    private javax.swing.JTextField second1;
+    private javax.swing.JButton settingsButton;
     // End of variables declaration//GEN-END:variables
 }

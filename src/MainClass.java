@@ -15,9 +15,11 @@ public class MainClass extends javax.swing.JFrame {
      * Creates new form MainClass
      */
     private Clock clock = new Clock();
+    private alarmClock alarmC = new alarmClock();
     private String timeZone="IST";
     public MainClass() {
         getContentPane().setBackground(Color.black);
+        int i = 0;
         initComponents();
 
         String filename="C:\\Users\\Prasanna\\Desktop\\gitProjects\\DigitalClock\\digital-7.ttf";
@@ -44,6 +46,10 @@ public class MainClass extends javax.swing.JFrame {
                     timeLabel.setForeground(clock.getProperties().getTextColor());
                     timeLabel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),5));
                     timeLabel.setFont(clock.getProperties().getFont());
+                    //System.out.println(day);
+                    //System.out.println(timeLabel.getText());
+                    //timeLabel.setText();
+                    alarmC.checkAlarm(clock.getTime(timeZone), day);
                 }
             }
         }.start();
@@ -52,6 +58,7 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         timeLabel = new javax.swing.JLabel();
         timeZoneCombo = new javax.swing.JComboBox<>();
@@ -60,17 +67,10 @@ public class MainClass extends javax.swing.JFrame {
         alarmBtn = new javax.swing.JButton();
         timerBtn = new javax.swing.JButton();
 
+        jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        timeLabel.setFont(new java.awt.Font("AnjaliOldLipi", 1, 48)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
 
         timeLabel.setFont(new java.awt.Font("Cambria Math", 1, 48)); // NOI18N
@@ -102,6 +102,11 @@ public class MainClass extends javax.swing.JFrame {
 
         alarmBtn.setFont(new java.awt.Font("Ebrima", 1, 11)); // NOI18N
         alarmBtn.setText("ALARM");
+        alarmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alarmBtnActionPerformed(evt);
+            }
+        });
 
         timerBtn.setText("TIMER");
         timerBtn.setFont(new java.awt.Font("Ebrima", 1, 11));
@@ -179,6 +184,11 @@ public class MainClass extends javax.swing.JFrame {
         watch.setVisible(true);
     }//GEN-LAST:event_generateStopwatchActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JDialog settingsDialog = new Settings(clock);
         settingsDialog.setVisible(true);
@@ -187,6 +197,10 @@ public class MainClass extends javax.swing.JFrame {
     private void timerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timerBtnActionPerformed
         new GUITimer().setVisible(true);
     }//GEN-LAST:event_timerBtnActionPerformed
+
+    private void alarmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarmBtnActionPerformed
+        alarmC.setVisible(true);
+    }//GEN-LAST:event_alarmBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,7 +228,6 @@ public class MainClass extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -228,6 +241,7 @@ public class MainClass extends javax.swing.JFrame {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton generateStopwatch;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JComboBox<String> timeZoneCombo;
     private javax.swing.JButton timerBtn;
