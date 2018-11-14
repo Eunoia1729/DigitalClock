@@ -1,3 +1,8 @@
+
+import java.io.File;
+import java.util.ArrayList;
+import javax.swing.JFileChooser;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,16 +11,33 @@
 
 /**
  *
- * @author 6ix
+ * @author vardhan
  */
-public class daySong extends javax.swing.JDialog {
+
+class Songfilter extends javax.swing.filechooser.FileFilter {
+    @Override
+    public boolean accept(File file) {
+        // Allow only directories, or files with ".txt" extension
+        return file.isDirectory() || file.getAbsolutePath().endsWith(".mp3");
+    }
+    @Override
+    public String getDescription() {
+        // This description will be displayed in the dialog,
+        // hard-coded = ugly, should be done via I18N
+        return "Text documents (*.mp3)";
+    }
+}
+public class daySong extends javax.swing.JFrame {
 
     /**
      * Creates new form daySong
      */
-    public daySong(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    ArrayList<AlarmSongs> aSong2;
+    public daySong( ArrayList<AlarmSongs> aSong) {
         initComponents();
+        aSong2 = aSong;
+        addTolist(aSong);
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -27,14 +49,122 @@ public class daySong extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Monday = new java.awt.Choice();
-        list1 = new java.awt.List();
+        ChooseSong = new javax.swing.JFileChooser();
+        Day = new javax.swing.JLabel();
+        SelectedSong = new javax.swing.JLabel();
+        Choose = new javax.swing.JLabel();
+        Monday = new javax.swing.JLabel();
+        Tuesday = new javax.swing.JLabel();
+        Wednesday = new javax.swing.JLabel();
+        Thursday = new javax.swing.JLabel();
+        Friday = new javax.swing.JLabel();
+        Saturday = new javax.swing.JLabel();
+        Sunday = new javax.swing.JLabel();
+        Open1 = new javax.swing.JButton();
+        Open2 = new javax.swing.JButton();
+        Open3 = new javax.swing.JButton();
+        Open4 = new javax.swing.JButton();
+        Open5 = new javax.swing.JButton();
+        Open6 = new javax.swing.JButton();
+        Open7 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        updateButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        ChooseSong.setFileFilter(new Songfilter());
 
-        list1.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Day.setText("Day");
+
+        SelectedSong.setText("Selected Song");
+
+        Choose.setText("Choose");
+
+        Monday.setText("Monday");
+
+        Tuesday.setText("Tuesday");
+
+        Wednesday.setText("Wednesday");
+
+        Thursday.setText("Thursday");
+
+        Friday.setText("Friday");
+
+        Saturday.setText("Saturday");
+
+        Sunday.setText("Sunday");
+
+        Open1.setText("Open");
+        Open1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                list1ActionPerformed(evt);
+                Open1ActionPerformed(evt);
+            }
+        });
+
+        Open2.setText("Open");
+        Open2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open2ActionPerformed(evt);
+            }
+        });
+
+        Open3.setText("Open");
+        Open3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open3ActionPerformed(evt);
+            }
+        });
+
+        Open4.setText("Open");
+        Open4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open4ActionPerformed(evt);
+            }
+        });
+
+        Open5.setText("Open");
+        Open5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open5ActionPerformed(evt);
+            }
+        });
+
+        Open6.setText("Open");
+        Open6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open6ActionPerformed(evt);
+            }
+        });
+
+        Open7.setText("Open ");
+        Open7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open7ActionPerformed(evt);
+            }
+        });
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
             }
         });
 
@@ -43,29 +173,216 @@ public class daySong extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Monday, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Sunday)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Open7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Monday)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Day)
+                                    .addGap(81, 81, 81)
+                                    .addComponent(SelectedSong))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Tuesday)
+                                        .addComponent(Wednesday)
+                                        .addComponent(Thursday)
+                                        .addComponent(Friday))
+                                    .addGap(27, 27, 27)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                            .addComponent(Saturday))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Open5)
+                                    .addComponent(Open4)
+                                    .addComponent(Open3)
+                                    .addComponent(Open2)
+                                    .addComponent(Choose)
+                                    .addComponent(Open1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(Open6)
+                                .addGap(0, 3, Short.MAX_VALUE)))))
+                .addGap(37, 37, 37))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(updateButton)
+                .addGap(154, 154, 154))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(Monday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Day)
+                    .addComponent(SelectedSong)
+                    .addComponent(Choose))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Monday)
+                    .addComponent(Open1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tuesday)
+                    .addComponent(Open2)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Wednesday)
+                    .addComponent(Open3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Thursday)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Open4))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Friday)
+                    .addComponent(Open5)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Saturday)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Open6)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Open7)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Sunday))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(updateButton)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void list1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_list1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_list1ActionPerformed
+    private void Open5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open5ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField5.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open5ActionPerformed
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void Open1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open1ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField1.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open1ActionPerformed
+
+    private void Open2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open2ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField2.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open2ActionPerformed
+
+    private void Open3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open3ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField3.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open3ActionPerformed
+
+    private void Open4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open4ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField4.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open4ActionPerformed
+
+    private void Open6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open6ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField6.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open6ActionPerformed
+
+    private void Open7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open7ActionPerformed
+        int returnVal = ChooseSong.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = ChooseSong.getSelectedFile();
+            jTextField7.setText(file.getAbsolutePath());
+        } else {
+            System.out.println("File access cancelled by user.");
+        }
+    }//GEN-LAST:event_Open7ActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        addTolist(aSong2);
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void addTolist(ArrayList<AlarmSongs> aSong){
+        aSong.clear();
+        AlarmSongs temp = new AlarmSongs();AlarmSongs temp2 = new AlarmSongs();
+        AlarmSongs temp3 = new AlarmSongs();AlarmSongs temp4 = new AlarmSongs();
+        AlarmSongs temp5 = new AlarmSongs();AlarmSongs temp6 = new AlarmSongs();
+        AlarmSongs temp7 = new AlarmSongs();
+        temp.setDay("Monday");temp.setSong(jTextField1.getText());
+        aSong.add(temp);
+        temp.setDay("Tuesday");temp.setSong(jTextField2.getText());
+        aSong.add(temp2);
+        temp.setDay("Wednesday");temp.setSong(jTextField3.getText());
+        aSong.add(temp3);
+        temp.setDay("Thursday");temp.setSong(jTextField4.getText());
+        aSong.add(temp4);
+        temp.setDay("Friday");temp.setSong(jTextField5.getText());
+        aSong.add(temp5);
+        temp.setDay("Saturday");temp.setSong(jTextField6.getText());
+        aSong.add(temp6);
+        temp.setDay("Sunday");temp.setSong(jTextField7.getText());
+        aSong.add(temp7);
+    }
     /**
      * @param args the command line arguments
      */
@@ -93,23 +410,40 @@ public class daySong extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                daySong dialog = new daySong(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                //new daySong().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Choice Monday;
-    private java.awt.List list1;
+    private javax.swing.JLabel Choose;
+    private javax.swing.JFileChooser ChooseSong;
+    private javax.swing.JLabel Day;
+    private javax.swing.JLabel Friday;
+    private javax.swing.JLabel Monday;
+    private javax.swing.JButton Open1;
+    private javax.swing.JButton Open2;
+    private javax.swing.JButton Open3;
+    private javax.swing.JButton Open4;
+    private javax.swing.JButton Open5;
+    private javax.swing.JButton Open6;
+    private javax.swing.JButton Open7;
+    private javax.swing.JLabel Saturday;
+    private javax.swing.JLabel SelectedSong;
+    private javax.swing.JLabel Sunday;
+    private javax.swing.JLabel Thursday;
+    private javax.swing.JLabel Tuesday;
+    private javax.swing.JLabel Wednesday;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }

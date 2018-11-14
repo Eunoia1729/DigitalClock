@@ -16,6 +16,7 @@ class Time {
     private String day;
     private int date;
     private String timeZone;
+    private int flag;
     
     Time(String timeZone){
         //System.out.println(timeZone);
@@ -28,7 +29,43 @@ class Time {
         month = calendar.get(Calendar.MONTH);
         year = calendar.get(Calendar.YEAR);
         date= calendar.get(Calendar.DATE);
+        flag = 0;
+        int day1 = calendar.get(Calendar.DAY_OF_WEEK); 
+        switch (day1) 
+        {
+            case Calendar.SUNDAY:
+                day = "Sunday";
+                break;
+            case Calendar.MONDAY:
+                day = "Monday";
+                break;
+            case Calendar.TUESDAY:
+                day = "Tuesday";
+                break;
+            case Calendar.WEDNESDAY:
+                day = "Wednesday";
+                break;
+            case Calendar.THURSDAY:
+                day = "Thursday";
+                break;
+            case Calendar.FRIDAY:
+                day = "Friday";
+                break;
+            case Calendar.SATURDAY:
+                day = "Saturday";
+                break;
+        }
+
+            }
+
+    public int getFlag() {
+        return flag;
     }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+    
     Time(String hours1, String minutes1, String seconds1, String day1)
     {
         this.hours = Integer.parseInt(hours1);

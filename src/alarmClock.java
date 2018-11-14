@@ -1,3 +1,5 @@
+import jaco.mp3.player.MP3Player;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -8,9 +10,14 @@ public class alarmClock extends javax.swing.JFrame {
 
     private ArrayList<Time> alarms;
     private String day1, hours1, minutes1, seconds1;
+    private ArrayList<AlarmSongs> aSongs;
+    private daySong dSong;
     public alarmClock() {
         initComponents();
         alarms = new ArrayList<Time>(1000);
+        aSongs = new ArrayList<AlarmSongs>(1000);
+        dSong = new daySong(aSongs);
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
     ArrayList<Time> getAlarmList()
     {
@@ -18,15 +25,24 @@ public class alarmClock extends javax.swing.JFrame {
     }
     void checkAlarm(Time Time1, String day)
     {
-        int i;
+        int i, j;
+        String song1 = "";
         for(i = 0; i < alarms.size(); ++i)
         {
             if( alarms.get(i).getHours() == Time1.getHours() && alarms.get(i).getMinutes() == Time1.getMinutes() && 
-                    alarms.get(i).getSeconds() == Time1.getSeconds() && day.compareTo(day1) == 0)
+                    alarms.get(i).getSeconds() == Time1.getSeconds() && alarms.get(i).getFlag() == 0
+                    && alarms.get(i).getDay().compareTo(Time1.getDay()) == 0)
             {
-                // insert code to execute song
-                System.out.println("alarm beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep");
-                
+                alarms.get(i).setFlag(1);
+                for(j = 0; j < 7; ++j)
+                {
+                    if( alarms.get(i).getDay().compareTo(aSongs.get(j).getDay()) == 0)
+                    {
+                        song1 = aSongs.get(j).getSong();
+                    }
+                }
+                MP3Player mp3player = new MP3Player(new File(song1));
+                mp3player.play();
             }
         }
     }
@@ -201,7 +217,7 @@ public class alarmClock extends javax.swing.JFrame {
     }//GEN-LAST:event_second1ActionPerformed
 
     private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
-        // settings code here
+         dSong.setVisible(true);
     }//GEN-LAST:event_settingsButtonActionPerformed
 
     private void addAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlarmButtonActionPerformed

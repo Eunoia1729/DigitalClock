@@ -14,7 +14,7 @@ public class stopwatch extends javax.swing.JFrame implements Runnable
      */
     public stopwatch() {
         initComponents();
-        setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         setVisible(true);
         t=new Thread(this);
         reset();
