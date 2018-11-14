@@ -727,6 +727,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="alarmButton"/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alarmBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="timerBtn">
       <Properties>
