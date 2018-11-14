@@ -117,7 +117,7 @@ public class Settings extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Settings");
-        setLocation(new java.awt.Point(200, 200));
+        setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 
         okbtn.setText("OK");

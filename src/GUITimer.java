@@ -6,7 +6,7 @@
 
 /**
  *
- * @author t H u n d e r
+ * @author 6ix
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -87,7 +87,7 @@ public class GUITimer extends JFrame implements ItemListener {
         jcb.addItemListener(this);
 
         setBackground(Color.BLACK);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Timer");
         pack();
         setLocationByPlatform(true);

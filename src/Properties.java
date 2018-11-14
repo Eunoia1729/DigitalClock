@@ -1,6 +1,8 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,9 +17,10 @@ import java.awt.Font;
 public class Properties {
     private Color bgColor = Color.BLACK;
     private Color borderColor = Color.WHITE;
-    private Color textColor=Color.MAGENTA;
-    private Font font = new Font("AnjaliOldLipi",Font.BOLD,48);
-
+    private Color textColor=Color.CYAN;
+    private Font font;
+    
+     
     public Color getBgColor() {
         return bgColor;
     }
@@ -51,6 +54,18 @@ public class Properties {
     }
 
     public Properties() {
+        String filename="C:\\Users\\Prasanna\\Desktop\\gitProjects\\DigitalClock\\digital-7.ttf";
+        
+        try
+        {
+            font = Font.createFont(Font.TRUETYPE_FONT, new File(filename));
+            font = font.deriveFont(Font.BOLD,48);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(font);
+        }catch(Exception exception){
+            exception.printStackTrace();
+            font = new Font("AnjajiOldLipi",Font.PLAIN,48);
+        }
     }
 
     public Properties(Color bgColor, Color borderColor, Color textColor, Font font) {

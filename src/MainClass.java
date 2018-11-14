@@ -21,21 +21,6 @@ public class MainClass extends javax.swing.JFrame {
         getContentPane().setBackground(Color.black);
         int i = 0;
         initComponents();
-
-        String filename="C:\\Users\\Prasanna\\Desktop\\gitProjects\\DigitalClock\\digital-7.ttf";
-
-        try
-        {
-        Font font = Font.createFont(Font.TRUETYPE_FONT, new File(filename));
-        font = font.deriveFont(Font.BOLD,28);
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        ge.registerFont(font);
-        timeLabel.setFont(font);
-        dateLabel.setFont(font);
-        }catch(Exception ex)
-        {
-            ex.printStackTrace();
-        }
         new Thread(){
             public void run(){
                 while(true){
@@ -46,9 +31,8 @@ public class MainClass extends javax.swing.JFrame {
                     timeLabel.setForeground(clock.getProperties().getTextColor());
                     timeLabel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),5));
                     timeLabel.setFont(clock.getProperties().getFont());
-                    //System.out.println(day);
-                    //System.out.println(timeLabel.getText());
-                    //timeLabel.setText();
+                    dateLabel.setForeground(clock.getProperties().getTextColor());
+                    dateLabel.setFont(new Font(clock.getProperties().getFont().getFamily(),0,18));
                     alarmC.checkAlarm(clock.getTime(timeZone), day);
                 }
             }
@@ -58,20 +42,22 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        settingsBtn = new javax.swing.JButton();
         timeLabel = new javax.swing.JLabel();
         timeZoneCombo = new javax.swing.JComboBox<>();
         dateLabel = new javax.swing.JLabel();
-        generateStopwatch = new javax.swing.JButton();
+        stopwatchBtn = new javax.swing.JButton();
         alarmBtn = new javax.swing.JButton();
         timerBtn = new javax.swing.JButton();
 
-        jButton3.setText("jButton3");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
+        settingsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsicon.png"))); // NOI18N
+        settingsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsBtnActionPerformed(evt);
+            }
+        });
 
         timeLabel.setFont(new java.awt.Font("Cambria Math", 1, 48)); // NOI18N
         timeLabel.setForeground(new java.awt.Color(0, 255, 255));
@@ -92,11 +78,11 @@ public class MainClass extends javax.swing.JFrame {
         dateLabel.setForeground(new java.awt.Color(0, 255, 255));
         dateLabel.setText("      January 01,2018");
 
-        generateStopwatch.setFont(new java.awt.Font("Ebrima", 1, 11)); // NOI18N
-        generateStopwatch.setText("STOPWATCH");
-        generateStopwatch.addActionListener(new java.awt.event.ActionListener() {
+        stopwatchBtn.setFont(new java.awt.Font("Ebrima", 1, 11)); // NOI18N
+        stopwatchBtn.setText("STOPWATCH");
+        stopwatchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateStopwatchActionPerformed(evt);
+                stopwatchBtnActionPerformed(evt);
             }
         });
 
@@ -132,9 +118,9 @@ public class MainClass extends javax.swing.JFrame {
                                         .addGap(169, 169, 169)
                                         .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(172, 172, 172)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(settingsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(generateStopwatch, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(stopwatchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(80, 80, 80)
                                 .addComponent(alarmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58)
@@ -149,7 +135,7 @@ public class MainClass extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(settingsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(timeZoneCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -158,7 +144,7 @@ public class MainClass extends javax.swing.JFrame {
                 .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(generateStopwatch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stopwatchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(alarmBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                         .addComponent(timerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -177,22 +163,22 @@ public class MainClass extends javax.swing.JFrame {
         //System.out.println(timeZone);
     }//GEN-LAST:event_selectTimeZone
 
-    private void generateStopwatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateStopwatchActionPerformed
+    private void stopwatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopwatchBtnActionPerformed
         // TODO add your handling code here:
         stopwatch watch=new stopwatch();
         //watch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         watch.setVisible(true);
-    }//GEN-LAST:event_generateStopwatchActionPerformed
+    }//GEN-LAST:event_stopwatchBtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void settingsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsBtnActionPerformed
         JDialog settingsDialog = new Settings(clock);
         settingsDialog.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_settingsBtnActionPerformed
 
     private void timerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timerBtnActionPerformed
         new GUITimer().setVisible(true);
@@ -239,9 +225,8 @@ public class MainClass extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alarmBtn;
     private javax.swing.JLabel dateLabel;
-    private javax.swing.JButton generateStopwatch;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton settingsBtn;
+    private javax.swing.JButton stopwatchBtn;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JComboBox<String> timeZoneCombo;
     private javax.swing.JButton timerBtn;
