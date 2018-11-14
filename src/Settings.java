@@ -360,7 +360,7 @@ public class Settings extends javax.swing.JDialog {
 
         jLabel5.setText("Preview");
 
-        preview.setEditable(false);
+        preview.setEditable(true);
         preview.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         preview.setText("Hello World");
         preview.setForeground(clock.getProperties().getTextColor());

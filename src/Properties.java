@@ -64,7 +64,7 @@ public class Properties {
             ge.registerFont(font);
         }catch(Exception exception){
             exception.printStackTrace();
-            font = new Font("AnjajiOldLipi",Font.PLAIN,48);
+            font = new Font("AnjaliOldLipi",Font.PLAIN,48);
         }
     }
 
