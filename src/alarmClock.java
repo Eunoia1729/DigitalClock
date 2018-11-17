@@ -1,6 +1,7 @@
 import jaco.mp3.player.MP3Player;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.*;
 
 /**
  *
@@ -12,6 +13,8 @@ public class alarmClock extends javax.swing.JFrame {
     private String day1, hours1, minutes1, seconds1;
     private ArrayList<AlarmSongs> aSongs;
     private daySong dSong;
+    private Time curAlarm;
+    private dismissAlarm disA;
     public alarmClock() {
         initComponents();
         alarms = new ArrayList<Time>(1000);
@@ -19,6 +22,13 @@ public class alarmClock extends javax.swing.JFrame {
         dSong = new daySong(aSongs);
         setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
+    class timeVerifier extends InputVerifier {
+         public boolean verify(JComponent in) {
+             JTextField tField = (JTextField) in;
+             return ( Integer.parseInt(tField.getText()) <= 60 && Integer.parseInt(tField.getText()) >= 0);
+         }
+     }
+
     ArrayList<Time> getAlarmList()
     {
        return alarms;    
@@ -34,6 +44,7 @@ public class alarmClock extends javax.swing.JFrame {
                     && alarms.get(i).getDay().compareTo(Time1.getDay()) == 0)
             {
                 alarms.get(i).setFlag(1);
+                curAlarm = alarms.get(i);
                 for(j = 0; j < 7; ++j)
                 {
                     if( alarms.get(i).getDay().compareTo(aSongs.get(j).getDay()) == 0)
@@ -43,6 +54,9 @@ public class alarmClock extends javax.swing.JFrame {
                 }
                 MP3Player mp3player = new MP3Player(new File(song1));
                 mp3player.play();
+                mp3player.setRepeat(true);
+                disA = new dismissAlarm(alarms, mp3player, i);
+                disA.setVisible(true);
             }
         }
     }
@@ -77,6 +91,7 @@ public class alarmClock extends javax.swing.JFrame {
         hour1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         hour1.setText("00");
         hour1.setToolTipText("");
+        hour1.setInputVerifier(new timeVerifier());
         hour1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hour1ActionPerformed(evt);
@@ -86,10 +101,12 @@ public class alarmClock extends javax.swing.JFrame {
         minute1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         minute1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         minute1.setText("00");
+        minute1.setInputVerifier(new timeVerifier());
 
         second1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         second1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         second1.setText("00");
+        second1.setInputVerifier(new timeVerifier());
         second1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 second1ActionPerformed(evt);
@@ -221,7 +238,11 @@ public class alarmClock extends javax.swing.JFrame {
     }//GEN-LAST:event_settingsButtonActionPerformed
 
     private void addAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlarmButtonActionPerformed
-         alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
+        String Str1 = "Do you want to set Alarm at "+hour1.getText()+":"+minute1.getText()+":"+second1.getText()+ " on "+
+                daySelect.getSelectedItem().toString()+" ? ";
+        int confirm = JOptionPane.showConfirmDialog(null,Str1,"Confirm adding alarm",JOptionPane.YES_NO_OPTION);
+        
+        alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
     }//GEN-LAST:event_addAlarmButtonActionPerformed
 
     private void editAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAlarmButtonActionPerformed
