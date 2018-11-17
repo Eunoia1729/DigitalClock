@@ -58,6 +58,14 @@ class Time {
 
             }
 
+    Time(String time, String day) {
+        String[] ti = time.split(":");
+        hours = Integer.valueOf(ti[0]);
+        minutes = Integer.valueOf(ti[1]);
+        seconds = Integer.valueOf(ti[2]);
+        this.day = day;
+    }
+
     public int getFlag() {
         return flag;
     }
@@ -124,18 +132,18 @@ class Time {
     {
         switch (index)
         {
-            case 1:return "January";
-            case 2:return "February";
-            case 3:return "March";
-            case 4:return "April";
-            case 5:return "May";
-            case 6:return "June";
-            case 7:return "July";
-            case 8:return "August";
-            case 9:return "September";
-            case 10:return "October";
-            case 11:return "November";
-            case 12:return "December";   
+            case 0:return "January";
+            case 1:return "February";
+            case 2:return "March";
+            case 3:return "April";
+            case 4:return "May";
+            case 5:return "June";
+            case 6:return "July";
+            case 7:return "August";
+            case 8:return "September";
+            case 9:return "October";
+            case 10:return "November";
+            case 11:return "December";   
         }
         return "";
     }

@@ -1,6 +1,13 @@
 import jaco.mp3.player.MP3Player;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,10 +21,11 @@ public class alarmClock extends javax.swing.JFrame {
     private daySong dSong;
     public alarmClock() {
         initComponents();
-        alarms = new ArrayList<Time>(1000);
+        alarms = new ArrayList<Time>();
         aSongs = new ArrayList<AlarmSongs>(1000);
         dSong = new daySong(aSongs);
         setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
+        readInput();
     }
     ArrayList<Time> getAlarmList()
     {
@@ -222,10 +230,12 @@ public class alarmClock extends javax.swing.JFrame {
 
     private void addAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlarmButtonActionPerformed
          alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
+         writeInput();
     }//GEN-LAST:event_addAlarmButtonActionPerformed
 
     private void editAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAlarmButtonActionPerformed
-         //edit alarm here
+        EditAlarmDialog editAlarmDialog = new EditAlarmDialog(this, rootPaneCheckingEnabled, alarms);
+        editAlarmDialog.setVisible(true);
     }//GEN-LAST:event_editAlarmButtonActionPerformed
 
     private void daySelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daySelectActionPerformed
@@ -283,4 +293,38 @@ public class alarmClock extends javax.swing.JFrame {
     private javax.swing.JTextField second1;
     private javax.swing.JButton settingsButton;
     // End of variables declaration//GEN-END:variables
+    
+    private void writeInput(){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter("input.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(EditAlarmDialog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        printWriter.println(String.valueOf(alarms.size()));
+        for(Time time : alarms) {
+            printWriter.print(time.toString()+ " " + time.getDay());
+        }
+        printWriter.close();
+    }
+    
+    private void readInput() {
+        Scanner sc = null;
+        try {
+            sc = new Scanner(new File("input.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(alarmClock.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("not found file");
+        }
+        int nAlarms = sc.nextInt();
+        alarms.clear();
+        for (int i = 0; i < nAlarms; i++) {
+            String timeStr = sc.next();
+            String day = sc.next();
+            Time time = new Time(timeStr,day);
+            alarms.add(time);
+        }  
+    }
+
 }
