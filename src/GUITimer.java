@@ -107,7 +107,7 @@ public class GUITimer extends JFrame implements ItemListener {
     // this method will run when user presses the start button
     void updateDisplay() {
 
-        Timeclass tc = new Timeclass();
+        Timeclass tc = new Timeclass(ttime);
         timer = new Timer(1000, tc);
         initial = System.currentTimeMillis();
         timer.start();
@@ -115,22 +115,30 @@ public class GUITimer extends JFrame implements ItemListener {
 
     // code for what happens when user presses the start or reset button
     public class Event implements ActionListener {
-
+       
         public void actionPerformed(ActionEvent e) {
             String bname = e.getActionCommand();
             if (bname.equals("START")) {
                 updateDisplay();
-            } else {
+            }  else if( bname.equals("RESET") ){
+                timer.stop();
+                jltime.setText(ttime+ ":00");
+                
+            }else{
                 jltime.setText("00:00");
                 timer.stop();
-                remaining = convertTime();
+                remaining = convertTimer();
             }
         }
     }
 
     // code that is invoked by swing timer for every second passed
     public class Timeclass implements ActionListener {
+         private String tt;
 
+        public Timeclass(String t) {
+            tt =t;
+        }
         public void actionPerformed(ActionEvent e) {
 
             remaining = convertTime();
@@ -154,6 +162,13 @@ public class GUITimer extends JFrame implements ItemListener {
                 timer.stop();
             }
         }
+        
+        public long convertTime() {
+
+        ttime2 = Long.parseLong(tt);
+        long converted = (ttime2 * 60000) + 1000;
+        return converted;
+    }
     }
 
     // get the number of minutes chosen by the user and activate convertTime
@@ -165,7 +180,7 @@ public class GUITimer extends JFrame implements ItemListener {
 
     // first need to convert no. of minutes from string to long.
     // then need to convert that to milliseconds.
-    public long convertTime() {
+  public long convertTimer() {
 
         ttime2 = Long.parseLong(ttime);
         long converted = (ttime2 * 60000) + 1000;
