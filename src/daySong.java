@@ -49,7 +49,7 @@ public class daySong extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ChooseSong = new javax.swing.JFileChooser();
+        ChooseSong = new javax.swing.JFileChooser(new File("."));
         Day = new javax.swing.JLabel();
         SelectedSong = new javax.swing.JLabel();
         Choose = new javax.swing.JLabel();
@@ -360,6 +360,7 @@ public class daySong extends javax.swing.JFrame {
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         addTolist(aSong2);
+        dispose();
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void addTolist(ArrayList<AlarmSongs> aSong){
@@ -370,17 +371,17 @@ public class daySong extends javax.swing.JFrame {
         AlarmSongs temp7 = new AlarmSongs();
         temp.setDay("Monday");temp.setSong(jTextField1.getText());
         aSong.add(temp);
-        temp.setDay("Tuesday");temp.setSong(jTextField2.getText());
+        temp2.setDay("Tuesday");temp2.setSong(jTextField2.getText());
         aSong.add(temp2);
-        temp.setDay("Wednesday");temp.setSong(jTextField3.getText());
+        temp3.setDay("Wednesday");temp3.setSong(jTextField3.getText());
         aSong.add(temp3);
-        temp.setDay("Thursday");temp.setSong(jTextField4.getText());
+        temp4.setDay("Thursday");temp4.setSong(jTextField4.getText());
         aSong.add(temp4);
-        temp.setDay("Friday");temp.setSong(jTextField5.getText());
+        temp5.setDay("Friday");temp5.setSong(jTextField5.getText());
         aSong.add(temp5);
-        temp.setDay("Saturday");temp.setSong(jTextField6.getText());
+        temp6.setDay("Saturday");temp6.setSong(jTextField6.getText());
         aSong.add(temp6);
-        temp.setDay("Sunday");temp.setSong(jTextField7.getText());
+        temp7.setDay("Sunday");temp7.setSong(jTextField7.getText());
         aSong.add(temp7);
     }
     /**
