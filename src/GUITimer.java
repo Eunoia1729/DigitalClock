@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.NumberFormat;
+import javax.swing.BorderFactory;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -25,10 +26,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
+import javax.swing.border.Border;
 
 public class GUITimer extends JFrame implements ItemListener {
-
-    private static final long serialVersionUID = 5924880907001755076L;
 
     JLabel jltime;
     JLabel jl;
@@ -47,23 +47,32 @@ public class GUITimer extends JFrame implements ItemListener {
 
         JPanel timePanel = new JPanel();
         timePanel.setForeground(Color.BLACK);
+       timePanel.setBackground(Color.black);
 
         jltime = new JLabel("00:00");
+        jltime.setForeground(new java.awt.Color(0, 255, 255));
         jltime.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-        jltime.setForeground(Color.CYAN);
-        jltime.setBackground(Color.darkGray);
+        Border border = BorderFactory.createLineBorder(Color.white, 3, rootPaneCheckingEnabled);
+        jltime.setBorder(border);
+        //jltime.setForeground(Color.CYAN);
+        jltime.setBackground(Color.black);
         jltime.setOpaque(true);
         jltime.setFont(new Font("DS-Digital", Font.BOLD, 96));
 
         timePanel.add(jltime);
 
         JPanel jp1 = new JPanel();
+        jp1.setBackground(Color.BLACK);
         jp1.setLayout(new FlowLayout());
 
-        jl = new JLabel("TOTAL TIME (minutes):");
+        jl = new JLabel("TOTAL TIME (min):");
+        jl.setForeground(Color.CYAN);
+        jl.setFont(new Font ("DS-Digital", Font.BOLD, 8));
         jp1.add(jl);
 
         jcb = new JComboBox<Integer>();
+        jcb.setBackground(Color.white);
+         jl.setFont(new Font ("DS-Digital", Font.BOLD, 16));
         for (int i = 59; i > 0; i--) {
             jcb.addItem(Integer.valueOf(i));
         }
@@ -72,10 +81,15 @@ public class GUITimer extends JFrame implements ItemListener {
         jp1.add(jcb);
 
         jbt = new JButton("START");
+         jl.setFont(new Font ("DS-Digital", Font.BOLD, 16));
+       jbt.setBackground(Color.white);
         jp1.add(jbt);
 
         jbt2 = new JButton("RESET");
+         jl.setFont(new Font ("DS-Digital", Font.BOLD, 16));
+        jbt2.setBackground(Color.white);
         jp1.add(jbt2);
+        
 
         getContentPane().add(jp1, BorderLayout.NORTH);
         getContentPane().add(timePanel, BorderLayout.CENTER);
@@ -103,11 +117,11 @@ public class GUITimer extends JFrame implements ItemListener {
 
         });
     }
-
+Timeclass tc;
     // this method will run when user presses the start button
     void updateDisplay() {
-
-        Timeclass tc = new Timeclass(ttime);
+        
+        tc = new Timeclass(ttime);
         timer = new Timer(1000, tc);
         initial = System.currentTimeMillis();
         timer.start();
@@ -119,14 +133,18 @@ public class GUITimer extends JFrame implements ItemListener {
         public void actionPerformed(ActionEvent e) {
             String bname = e.getActionCommand();
             if (bname.equals("START")) {
+                if(timer!=null)timer.stop();
+                timer =null;
                 updateDisplay();
             }  else if( bname.equals("RESET") ){
                 timer.stop();
+                timer = null;
                 jltime.setText(ttime+ ":00");
                 
             }else{
                 jltime.setText("00:00");
                 timer.stop();
+                
                 remaining = convertTimer();
             }
         }
@@ -181,7 +199,7 @@ public class GUITimer extends JFrame implements ItemListener {
     // first need to convert no. of minutes from string to long.
     // then need to convert that to milliseconds.
   public long convertTimer() {
-
+        ttime = (String) jcb.getSelectedItem().toString();
         ttime2 = Long.parseLong(ttime);
         long converted = (ttime2 * 60000) + 1000;
         return converted;
