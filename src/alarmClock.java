@@ -268,9 +268,9 @@ public class alarmClock extends javax.swing.JFrame {
         String Str1 = "Do you want to set Alarm at "+hour1.getText()+":"+minute1.getText()+":"+second1.getText()+ " on "+
                 daySelect.getSelectedItem().toString()+" ? ";
         int confirm = JOptionPane.showConfirmDialog(null,Str1,"Confirm adding alarm",JOptionPane.YES_NO_OPTION);
-
+        if( confirm == 0)
         alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
-         alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
+         //alarms.add(new Time(hour1.getText(),minute1.getText(),second1.getText(),daySelect.getSelectedItem().toString()));
          writeInput();
     }//GEN-LAST:event_addAlarmButtonActionPerformed
 
