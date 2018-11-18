@@ -345,7 +345,7 @@ public class alarmClock extends javax.swing.JFrame {
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println(String.valueOf(alarms.size()));
         for(Time time : alarms) {
-            printWriter.print(time.toString()+ " " + time.getDay()+"\n");
+            printWriter.println(time.toString()+ " " + time.getDay());
         }
         printWriter.close();
     }
