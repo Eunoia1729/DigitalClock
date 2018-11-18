@@ -54,12 +54,12 @@ public class Properties {
     }
 
     public Properties() {
-        String filename="C:\\Users\\Prasanna\\Desktop\\gitProjects\\DigitalClock\\digital-7.ttf";
+        String filename="font_file.ttf";
         
         try
         {
             font = Font.createFont(Font.TRUETYPE_FONT, new File(filename));
-            font = font.deriveFont(Font.BOLD,48);
+            font = font.deriveFont(Font.BOLD,96);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font);
         }catch(Exception exception){

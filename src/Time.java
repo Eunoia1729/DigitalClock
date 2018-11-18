@@ -12,6 +12,7 @@ class Time {
     private int seconds;
     private int dayOfMonth;
     private int month;
+    private int am_pm;
     private int year;
     private String day;
     private int date;
@@ -24,6 +25,7 @@ class Time {
         Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone(timeZone));
         hours = calendar.get(Calendar.HOUR);
         minutes = calendar.get(Calendar.MINUTE);
+        am_pm=calendar.get(Calendar.AM_PM);
         seconds = calendar.get(Calendar.SECOND);
         dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
         month = calendar.get(Calendar.MONTH);
@@ -115,6 +117,28 @@ class Time {
         String res = stringConvert(hours)+":"+stringConvert(minutes)+":"+stringConvert(seconds);
         return res;
     }
+    
+    public String toggle()
+    {
+        String res;
+        String am=stringConvert(am_pm);
+        if(am.equals("01"))
+            res = stringConvert(hours+12)+":"+stringConvert(minutes)+":"+stringConvert(seconds);
+        else
+            res = stringConvert(hours)+":"+stringConvert(minutes)+":"+stringConvert(seconds);
+        return res;
+    }
+    
+    public String getAM()
+    {
+        String am=stringConvert(am_pm);
+        if(am.equals("01"))
+            am="PM";
+        else
+            am="AM";
+        return am;
+    }
+    
     public String daysToStirng()
     {
         String ret= getMonthName(month)+" "+stringConvert(date)+", "+stringConvert(year);
@@ -124,18 +148,18 @@ class Time {
     {
         switch (index)
         {
-            case 1:return "January";
-            case 2:return "February";
-            case 3:return "March";
-            case 4:return "April";
-            case 5:return "May";
-            case 6:return "June";
-            case 7:return "July";
-            case 8:return "August";
-            case 9:return "September";
-            case 10:return "October";
-            case 11:return "November";
-            case 12:return "December";   
+            case 0:return "January";
+            case 1:return "February";
+            case 2:return "March";
+            case 3:return "April";
+            case 4:return "May";
+            case 5:return "June";
+            case 6:return "July";
+            case 7:return "August";
+            case 8:return "September";
+            case 9:return "October";
+            case 10:return "November";
+            case 11:return "December";   
         }
         return "";
     }
