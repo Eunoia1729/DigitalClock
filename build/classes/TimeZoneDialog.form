@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Select Time Zone"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="timeZoneCombo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="timeZoneCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Time Zone: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="timeZoneCombo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="MS UI Gothic" size="11" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="0" type="rgb"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="561">
+            <StringItem index="0" value="IST"/>
+            <StringItem index="1" value="GMT"/>
+            <StringItem index="2" value="MIT"/>
+            <StringItem index="3" value="Singapore"/>
+            <StringItem index="4" value="Europe/London"/>
+            <StringItem index="5" value="Iceland"/>
+            <StringItem index="6" value="Portugal"/>
+            <StringItem index="7" value="America/Los_Angeles"/>
+            <StringItem index="8" value="Australia/Adelaide"/>
+            <StringItem index="9" value="Hongkong"/>
+            <StringItem index="10" value="PRC"/>
+            <StringItem index="11" value="Canada/Pacific"/>
+            <StringItem index="12" value="Japan"/>
+            <StringItem index="13" value="Africa/Johannesburg"/>
+            <StringItem index="14" value="Asia/Qatar"/>
+            <StringItem index="15" value="Etc/GMT+12"/>
+            <StringItem index="16" value="Etc/GMT+11"/>
+            <StringItem index="17" value="Pacific/Apia"/>
+            <StringItem index="18" value="Pacific/Midway"/>
+            <StringItem index="19" value="Pacific/Niue"/>
+            <StringItem index="20" value="Pacific/Pago_Pago"/>
+            <StringItem index="21" value="Pacific/Samoa"/>
+            <StringItem index="22" value="US/Samoa"/>
+            <StringItem index="23" value="America/Adak"/>
+            <StringItem index="24" value="America/Atka"/>
+            <StringItem index="25" value="Etc/GMT+10"/>
+            <StringItem index="26" value="HST"/>
+            <StringItem index="27" value="Pacific/Fakaofo"/>
+            <StringItem index="28" value="Pacific/Honolulu"/>
+            <StringItem index="29" value="Pacific/Johnston"/>
+            <StringItem index="30" value="Pacific/Rarotonga"/>
+            <StringItem index="31" value="Pacific/Tahiti"/>
+            <StringItem index="32" value="SystemV/HST10"/>
+            <StringItem index="33" value="US/Aleutian"/>
+            <StringItem index="34" value="US/Hawaii"/>
+            <StringItem index="35" value="Pacific/Marquesas"/>
+            <StringItem index="36" value="AST"/>
+            <StringItem index="37" value="America/Anchorage"/>
+            <StringItem index="38" value="America/Juneau"/>
+            <StringItem index="39" value="America/Nome"/>
+            <StringItem index="40" value="America/Yakutat"/>
+            <StringItem index="41" value="Etc/GMT+9"/>
+            <StringItem index="42" value="Pacific/Gambier"/>
+            <StringItem index="43" value="SystemV/YST9"/>
+            <StringItem index="44" value="SystemV/YST9YDT"/>
+            <StringItem index="45" value="US/Alaska"/>
+            <StringItem index="46" value="America/Dawson"/>
+            <StringItem index="47" value="America/Ensenada"/>
+            <StringItem index="48" value="America/Tijuana"/>
+            <StringItem index="49" value="America/Vancouver"/>
+            <StringItem index="50" value="America/Whitehorse"/>
+            <StringItem index="51" value="Canada/Yukon"/>
+            <StringItem index="52" value="Etc/GMT+8"/>
+            <StringItem index="53" value="Mexico/BajaNorte"/>
+            <StringItem index="54" value="PST"/>
+            <StringItem index="55" value="PST8PDT"/>
+            <StringItem index="56" value="Pacific/Pitcairn"/>
+            <StringItem index="57" value="SystemV/PST8"/>
+            <StringItem index="58" value="SystemV/PST8PDT"/>
+            <StringItem index="59" value="US/Pacific"/>
+            <StringItem index="60" value="US/Pacific-New"/>
+            <StringItem index="61" value="America/Boise"/>
+            <StringItem index="62" value="America/Cambridge_Bay"/>
+            <StringItem index="63" value="America/Chihuahua"/>
+            <StringItem index="64" value="America/Dawson_Creek"/>
+            <StringItem index="65" value="America/Denver"/>
+            <StringItem index="66" value="America/Edmonton"/>
+            <StringItem index="67" value="America/Hermosillo"/>
+            <StringItem index="68" value="America/Inuvik"/>
+            <StringItem index="69" value="America/Mazatlan"/>
+            <StringItem index="70" value="America/Phoenix"/>
+            <StringItem index="71" value="America/Shiprock"/>
+            <StringItem index="72" value="America/Yellowknife"/>
+            <StringItem index="73" value="Canada/Mountain"/>
+            <StringItem index="74" value="Etc/GMT+7"/>
+            <StringItem index="75" value="MST"/>
+            <StringItem index="76" value="MST7MDT"/>
+            <StringItem index="77" value="Mexico/BajaSur"/>
+            <StringItem index="78" value="Navajo"/>
+            <StringItem index="79" value="PNT"/>
+            <StringItem index="80" value="SystemV/MST7"/>
+            <StringItem index="81" value="SystemV/MST7MDT"/>
+            <StringItem index="82" value="US/Arizona"/>
+            <StringItem index="83" value="US/Mountain"/>
+            <StringItem index="84" value="America/Belize"/>
+            <StringItem index="85" value="America/Cancun"/>
+            <StringItem index="86" value="America/Chicago"/>
+            <StringItem index="87" value="America/Costa_Rica"/>
+            <StringItem index="88" value="America/El_Salvador"/>
+            <StringItem index="89" value="America/Guatemala"/>
+            <StringItem index="90" value="America/Managua"/>
+            <StringItem index="91" value="America/Menominee"/>
+            <StringItem index="92" value="America/Merida"/>
+            <StringItem index="93" value="America/Mexico_City"/>
+            <StringItem index="94" value="America/Monterrey"/>
+            <StringItem index="95" value="America/North_Dakota/Center"/>
+            <StringItem index="96" value="America/Rainy_River"/>
+            <StringItem index="97" value="America/Rankin_Inlet"/>
+            <StringItem index="98" value="America/Regina"/>
+            <StringItem index="99" value="America/Swift_Current"/>
+            <StringItem index="100" value="America/Tegucigalpa"/>
+            <StringItem index="101" value="America/Winnipeg"/>
+            <StringItem index="102" value="CST"/>
+            <StringItem index="103" value="CST6CDT"/>
+            <StringItem index="104" value="Canada/Central"/>
+            <StringItem index="105" value="Canada/East-Saskatchewan"/>
+            <StringItem index="106" value="Canada/Saskatchewan"/>
+            <StringItem index="107" value="Chile/EasterIsland"/>
+            <StringItem index="108" value="Etc/GMT+6"/>
+            <StringItem index="109" value="Mexico/General"/>
+            <StringItem index="110" value="Pacific/Easter"/>
+            <StringItem index="111" value="Pacific/Galapagos"/>
+            <StringItem index="112" value="SystemV/CST6"/>
+            <StringItem index="113" value="SystemV/CST6CDT"/>
+            <StringItem index="114" value="US/Central"/>
+            <StringItem index="115" value="America/Bogota"/>
+            <StringItem index="116" value="America/Cayman"/>
+            <StringItem index="117" value="America/Detroit"/>
+            <StringItem index="118" value="America/Eirunepe"/>
+            <StringItem index="119" value="America/Fort_Wayne"/>
+            <StringItem index="120" value="America/Grand_Turk"/>
+            <StringItem index="121" value="America/Guayaquil"/>
+            <StringItem index="122" value="America/Havana"/>
+            <StringItem index="123" value="America/Indiana/Indianapolis"/>
+            <StringItem index="124" value="America/Indiana/Knox"/>
+            <StringItem index="125" value="America/Indiana/Marengo"/>
+            <StringItem index="126" value="America/Indiana/Vevay"/>
+            <StringItem index="127" value="America/Indianapolis"/>
+            <StringItem index="128" value="America/Iqaluit"/>
+            <StringItem index="129" value="America/Jamaica"/>
+            <StringItem index="130" value="America/Kentucky/Louisville"/>
+            <StringItem index="131" value="America/Kentucky/Monticello"/>
+            <StringItem index="132" value="America/Knox_IN"/>
+            <StringItem index="133" value="America/Lima"/>
+            <StringItem index="134" value="America/Louisville"/>
+            <StringItem index="135" value="America/Montreal"/>
+            <StringItem index="136" value="America/Nassau"/>
+            <StringItem index="137" value="America/New_York"/>
+            <StringItem index="138" value="America/Nipigon"/>
+            <StringItem index="139" value="America/Panama"/>
+            <StringItem index="140" value="America/Pangnirtung"/>
+            <StringItem index="141" value="America/Port-au-Prince"/>
+            <StringItem index="142" value="America/Porto_Acre"/>
+            <StringItem index="143" value="America/Rio_Branco"/>
+            <StringItem index="144" value="America/Thunder_Bay"/>
+            <StringItem index="145" value="America/Toronto"/>
+            <StringItem index="146" value="Brazil/Acre"/>
+            <StringItem index="147" value="Canada/Eastern"/>
+            <StringItem index="148" value="Cuba"/>
+            <StringItem index="149" value="EST"/>
+            <StringItem index="150" value="EST5EDT"/>
+            <StringItem index="151" value="Etc/GMT+5"/>
+            <StringItem index="152" value="IET"/>
+            <StringItem index="153" value="Jamaica"/>
+            <StringItem index="154" value="SystemV/EST5"/>
+            <StringItem index="155" value="SystemV/EST5EDT"/>
+            <StringItem index="156" value="US/East-Indiana"/>
+            <StringItem index="157" value="US/Eastern"/>
+            <StringItem index="158" value="US/Indiana-Starke"/>
+            <StringItem index="159" value="US/Michigan"/>
+            <StringItem index="160" value="America/Anguilla"/>
+            <StringItem index="161" value="America/Antigua"/>
+            <StringItem index="162" value="America/Aruba"/>
+            <StringItem index="163" value="America/Asuncion"/>
+            <StringItem index="164" value="America/Barbados"/>
+            <StringItem index="165" value="America/Boa_Vista"/>
+            <StringItem index="166" value="America/Campo_Grande"/>
+            <StringItem index="167" value="America/Caracas"/>
+            <StringItem index="168" value="America/Cuiaba"/>
+            <StringItem index="169" value="America/Curacao"/>
+            <StringItem index="170" value="America/Dominica"/>
+            <StringItem index="171" value="America/Glace_Bay"/>
+            <StringItem index="172" value="America/Goose_Bay"/>
+            <StringItem index="173" value="America/Grenada"/>
+            <StringItem index="174" value="America/Guadeloupe"/>
+            <StringItem index="175" value="America/Guyana"/>
+            <StringItem index="176" value="America/Halifax"/>
+            <StringItem index="177" value="America/La_Paz"/>
+            <StringItem index="178" value="America/Manaus"/>
+            <StringItem index="179" value="America/Martinique"/>
+            <StringItem index="180" value="America/Montserrat"/>
+            <StringItem index="181" value="America/Port_of_Spain"/>
+            <StringItem index="182" value="America/Porto_Velho"/>
+            <StringItem index="183" value="America/Puerto_Rico"/>
+            <StringItem index="184" value="America/Santiago"/>
+            <StringItem index="185" value="America/Santo_Domingo"/>
+            <StringItem index="186" value="America/St_Kitts"/>
+            <StringItem index="187" value="America/St_Lucia"/>
+            <StringItem index="188" value="America/St_Thomas"/>
+            <StringItem index="189" value="America/St_Vincent"/>
+            <StringItem index="190" value="America/Thule"/>
+            <StringItem index="191" value="America/Tortola"/>
+            <StringItem index="192" value="America/Virgin"/>
+            <StringItem index="193" value="Antarctica/Palmer"/>
+            <StringItem index="194" value="Atlantic/Bermuda"/>
+            <StringItem index="195" value="Atlantic/Stanley"/>
+            <StringItem index="196" value="Brazil/West"/>
+            <StringItem index="197" value="Canada/Atlantic"/>
+            <StringItem index="198" value="Chile/Continental"/>
+            <StringItem index="199" value="Etc/GMT+4"/>
+            <StringItem index="200" value="PRT"/>
+            <StringItem index="201" value="SystemV/AST4"/>
+            <StringItem index="202" value="SystemV/AST4ADT"/>
+            <StringItem index="203" value="America/St_Johns"/>
+            <StringItem index="204" value="CNT"/>
+            <StringItem index="205" value="Canada/Newfoundland"/>
+            <StringItem index="206" value="AGT"/>
+            <StringItem index="207" value="America/Araguaina"/>
+            <StringItem index="208" value="America/Bahia"/>
+            <StringItem index="209" value="America/Belem"/>
+            <StringItem index="210" value="America/Buenos_Aires"/>
+            <StringItem index="211" value="America/Catamarca"/>
+            <StringItem index="212" value="America/Cayenne"/>
+            <StringItem index="213" value="America/Cordoba"/>
+            <StringItem index="214" value="America/Fortaleza"/>
+            <StringItem index="215" value="America/Godthab"/>
+            <StringItem index="216" value="America/Jujuy"/>
+            <StringItem index="217" value="America/Maceio"/>
+            <StringItem index="218" value="America/Mendoza"/>
+            <StringItem index="219" value="America/Miquelon"/>
+            <StringItem index="220" value="America/Montevideo"/>
+            <StringItem index="221" value="America/Paramaribo"/>
+            <StringItem index="222" value="America/Recife"/>
+            <StringItem index="223" value="America/Rosario"/>
+            <StringItem index="224" value="America/Sao_Paulo"/>
+            <StringItem index="225" value="Antarctica/Rothera"/>
+            <StringItem index="226" value="BET"/>
+            <StringItem index="227" value="Brazil/East"/>
+            <StringItem index="228" value="Etc/GMT+3"/>
+            <StringItem index="229" value="America/Noronha"/>
+            <StringItem index="230" value="Atlantic/South_Georgia"/>
+            <StringItem index="231" value="Brazil/DeNoronha"/>
+            <StringItem index="232" value="Etc/GMT+2"/>
+            <StringItem index="233" value="America/Scoresbysund"/>
+            <StringItem index="234" value="Atlantic/Azores"/>
+            <StringItem index="235" value="Atlantic/Cape_Verde"/>
+            <StringItem index="236" value="Etc/GMT+1"/>
+            <StringItem index="237" value="Africa/Abidjan"/>
+            <StringItem index="238" value="Africa/Accra"/>
+            <StringItem index="239" value="Africa/Bamako"/>
+            <StringItem index="240" value="Africa/Banjul"/>
+            <StringItem index="241" value="Africa/Bissau"/>
+            <StringItem index="242" value="Africa/Casablanca"/>
+            <StringItem index="243" value="Africa/Conakry"/>
+            <StringItem index="244" value="Africa/Dakar"/>
+            <StringItem index="245" value="Africa/El_Aaiun"/>
+            <StringItem index="246" value="Africa/Freetown"/>
+            <StringItem index="247" value="Africa/Lome"/>
+            <StringItem index="248" value="Africa/Monrovia"/>
+            <StringItem index="249" value="Africa/Nouakchott"/>
+            <StringItem index="250" value="Africa/Ouagadougou"/>
+            <StringItem index="251" value="Africa/Sao_Tome"/>
+            <StringItem index="252" value="Africa/Timbuktu"/>
+            <StringItem index="253" value="America/Danmarkshavn"/>
+            <StringItem index="254" value="Atlantic/Canary"/>
+            <StringItem index="255" value="Atlantic/Faeroe"/>
+            <StringItem index="256" value="Atlantic/Madeira"/>
+            <StringItem index="257" value="Atlantic/Reykjavik"/>
+            <StringItem index="258" value="Atlantic/St_Helena"/>
+            <StringItem index="259" value="Eire"/>
+            <StringItem index="260" value="Etc/GMT"/>
+            <StringItem index="261" value="Etc/GMT+0"/>
+            <StringItem index="262" value="Etc/GMT-0"/>
+            <StringItem index="263" value="Etc/GMT0"/>
+            <StringItem index="264" value="Etc/Greenwich"/>
+            <StringItem index="265" value="Etc/UCT"/>
+            <StringItem index="266" value="Etc/UTC"/>
+            <StringItem index="267" value="Etc/Universal"/>
+            <StringItem index="268" value="Etc/Zulu"/>
+            <StringItem index="269" value="Europe/Belfast"/>
+            <StringItem index="270" value="Europe/Dublin"/>
+            <StringItem index="271" value="Europe/Lisbon"/>
+            <StringItem index="272" value="GB"/>
+            <StringItem index="273" value="GB-Eire"/>
+            <StringItem index="274" value="GMT0"/>
+            <StringItem index="275" value="Greenwich"/>
+            <StringItem index="276" value="UCT"/>
+            <StringItem index="277" value="UTC"/>
+            <StringItem index="278" value="Universal"/>
+            <StringItem index="279" value="WET"/>
+            <StringItem index="280" value="Zulu"/>
+            <StringItem index="281" value="Africa/Algiers"/>
+            <StringItem index="282" value="Africa/Bangui"/>
+            <StringItem index="283" value="Africa/Brazzaville"/>
+            <StringItem index="284" value="Africa/Ceuta"/>
+            <StringItem index="285" value="Africa/Douala"/>
+            <StringItem index="286" value="Africa/Kinshasa"/>
+            <StringItem index="287" value="Africa/Lagos"/>
+            <StringItem index="288" value="Africa/Libreville"/>
+            <StringItem index="289" value="Africa/Luanda"/>
+            <StringItem index="290" value="Africa/Malabo"/>
+            <StringItem index="291" value="Africa/Ndjamena"/>
+            <StringItem index="292" value="Africa/Niamey"/>
+            <StringItem index="293" value="Africa/Porto-Novo"/>
+            <StringItem index="294" value="Africa/Tunis"/>
+            <StringItem index="295" value="Africa/Windhoek"/>
+            <StringItem index="296" value="Arctic/Longyearbyen"/>
+            <StringItem index="297" value="Atlantic/Jan_Mayen"/>
+            <StringItem index="298" value="CET"/>
+            <StringItem index="299" value="ECT"/>
+            <StringItem index="300" value="Etc/GMT-1"/>
+            <StringItem index="301" value="Europe/Amsterdam"/>
+            <StringItem index="302" value="Europe/Andorra"/>
+            <StringItem index="303" value="Europe/Belgrade"/>
+            <StringItem index="304" value="Europe/Berlin"/>
+            <StringItem index="305" value="Europe/Bratislava"/>
+            <StringItem index="306" value="Europe/Brussels"/>
+            <StringItem index="307" value="Europe/Budapest"/>
+            <StringItem index="308" value="Europe/Copenhagen"/>
+            <StringItem index="309" value="Europe/Gibraltar"/>
+            <StringItem index="310" value="Europe/Ljubljana"/>
+            <StringItem index="311" value="Europe/Luxembourg"/>
+            <StringItem index="312" value="Europe/Madrid"/>
+            <StringItem index="313" value="Europe/Malta"/>
+            <StringItem index="314" value="Europe/Monaco"/>
+            <StringItem index="315" value="Europe/Oslo"/>
+            <StringItem index="316" value="Europe/Paris"/>
+            <StringItem index="317" value="Europe/Prague"/>
+            <StringItem index="318" value="Europe/Rome"/>
+            <StringItem index="319" value="Europe/San_Marino"/>
+            <StringItem index="320" value="Europe/Sarajevo"/>
+            <StringItem index="321" value="Europe/Skopje"/>
+            <StringItem index="322" value="Europe/Stockholm"/>
+            <StringItem index="323" value="Europe/Tirane"/>
+            <StringItem index="324" value="Europe/Vaduz"/>
+            <StringItem index="325" value="Europe/Vatican"/>
+            <StringItem index="326" value="Europe/Vienna"/>
+            <StringItem index="327" value="Europe/Warsaw"/>
+            <StringItem index="328" value="Europe/Zagreb"/>
+            <StringItem index="329" value="Europe/Zurich"/>
+            <StringItem index="330" value="MET"/>
+            <StringItem index="331" value="Poland"/>
+            <StringItem index="332" value="ART"/>
+            <StringItem index="333" value="Africa/Blantyre"/>
+            <StringItem index="334" value="Africa/Bujumbura"/>
+            <StringItem index="335" value="Africa/Cairo"/>
+            <StringItem index="336" value="Africa/Gaborone"/>
+            <StringItem index="337" value="Africa/Harare"/>
+            <StringItem index="338" value="Africa/Kigali"/>
+            <StringItem index="339" value="Africa/Lubumbashi"/>
+            <StringItem index="340" value="Africa/Lusaka"/>
+            <StringItem index="341" value="Africa/Maputo"/>
+            <StringItem index="342" value="Africa/Maseru"/>
+            <StringItem index="343" value="Africa/Mbabane"/>
+            <StringItem index="344" value="Africa/Tripoli"/>
+            <StringItem index="345" value="Asia/Amman"/>
+            <StringItem index="346" value="Asia/Beirut"/>
+            <StringItem index="347" value="Asia/Damascus"/>
+            <StringItem index="348" value="Asia/Gaza"/>
+            <StringItem index="349" value="Asia/Istanbul"/>
+            <StringItem index="350" value="Asia/Jerusalem"/>
+            <StringItem index="351" value="Asia/Nicosia"/>
+            <StringItem index="352" value="Asia/Tel_Aviv"/>
+            <StringItem index="353" value="CAT"/>
+            <StringItem index="354" value="EET"/>
+            <StringItem index="355" value="Egypt"/>
+            <StringItem index="356" value="Etc/GMT-2"/>
+            <StringItem index="357" value="Europe/Athens"/>
+            <StringItem index="358" value="Europe/Bucharest"/>
+            <StringItem index="359" value="Europe/Chisinau"/>
+            <StringItem index="360" value="Europe/Helsinki"/>
+            <StringItem index="361" value="Europe/Istanbul"/>
+            <StringItem index="362" value="Europe/Kaliningrad"/>
+            <StringItem index="363" value="Europe/Kiev"/>
+            <StringItem index="364" value="Europe/Minsk"/>
+            <StringItem index="365" value="Europe/Nicosia"/>
+            <StringItem index="366" value="Europe/Riga"/>
+            <StringItem index="367" value="Europe/Simferopol"/>
+            <StringItem index="368" value="Europe/Sofia"/>
+            <StringItem index="369" value="Europe/Tallinn"/>
+            <StringItem index="370" value="Europe/Tiraspol"/>
+            <StringItem index="371" value="Europe/Uzhgorod"/>
+            <StringItem index="372" value="Europe/Vilnius"/>
+            <StringItem index="373" value="Europe/Zaporozhye"/>
+            <StringItem index="374" value="Israel"/>
+            <StringItem index="375" value="Libya"/>
+            <StringItem index="376" value="Turkey"/>
+            <StringItem index="377" value="Africa/Addis_Ababa"/>
+            <StringItem index="378" value="Africa/Asmera"/>
+            <StringItem index="379" value="Africa/Dar_es_Salaam"/>
+            <StringItem index="380" value="Africa/Djibouti"/>
+            <StringItem index="381" value="Africa/Kampala"/>
+            <StringItem index="382" value="Africa/Khartoum"/>
+            <StringItem index="383" value="Africa/Mogadishu"/>
+            <StringItem index="384" value="Africa/Nairobi"/>
+            <StringItem index="385" value="Antarctica/Syowa"/>
+            <StringItem index="386" value="Asia/Aden"/>
+            <StringItem index="387" value="Asia/Baghdad"/>
+            <StringItem index="388" value="Asia/Bahrain"/>
+            <StringItem index="389" value="Asia/Kuwait"/>
+            <StringItem index="390" value="Asia/Riyadh"/>
+            <StringItem index="391" value="EAT"/>
+            <StringItem index="392" value="Etc/GMT-3"/>
+            <StringItem index="393" value="Europe/Moscow"/>
+            <StringItem index="394" value="Indian/Antananarivo"/>
+            <StringItem index="395" value="Indian/Comoro"/>
+            <StringItem index="396" value="Indian/Mayotte"/>
+            <StringItem index="397" value="W-SU"/>
+            <StringItem index="398" value="Asia/Riyadh87"/>
+            <StringItem index="399" value="Asia/Riyadh88"/>
+            <StringItem index="400" value="Asia/Riyadh89"/>
+            <StringItem index="401" value="Mideast/Riyadh87"/>
+            <StringItem index="402" value="Mideast/Riyadh88"/>
+            <StringItem index="403" value="Mideast/Riyadh89"/>
+            <StringItem index="404" value="Asia/Tehran"/>
+            <StringItem index="405" value="Iran"/>
+            <StringItem index="406" value="Asia/Aqtau"/>
+            <StringItem index="407" value="Asia/Baku"/>
+            <StringItem index="408" value="Asia/Dubai"/>
+            <StringItem index="409" value="Asia/Muscat"/>
+            <StringItem index="410" value="Asia/Oral"/>
+            <StringItem index="411" value="Asia/Tbilisi"/>
+            <StringItem index="412" value="Asia/Yerevan"/>
+            <StringItem index="413" value="Etc/GMT-4"/>
+            <StringItem index="414" value="Europe/Samara"/>
+            <StringItem index="415" value="Indian/Mahe"/>
+            <StringItem index="416" value="Indian/Mauritius"/>
+            <StringItem index="417" value="Indian/Reunion"/>
+            <StringItem index="418" value="NET"/>
+            <StringItem index="419" value="Asia/Kabul"/>
+            <StringItem index="420" value="Asia/Aqtobe"/>
+            <StringItem index="421" value="Asia/Ashgabat"/>
+            <StringItem index="422" value="Asia/Ashkhabad"/>
+            <StringItem index="423" value="Asia/Bishkek"/>
+            <StringItem index="424" value="Asia/Dushanbe"/>
+            <StringItem index="425" value="Asia/Karachi"/>
+            <StringItem index="426" value="Asia/Samarkand"/>
+            <StringItem index="427" value="Asia/Tashkent"/>
+            <StringItem index="428" value="Asia/Yekaterinburg"/>
+            <StringItem index="429" value="Etc/GMT-5"/>
+            <StringItem index="430" value="Indian/Kerguelen"/>
+            <StringItem index="431" value="Indian/Maldives"/>
+            <StringItem index="432" value="PLT"/>
+            <StringItem index="433" value="Asia/Calcutta"/>
+            <StringItem index="434" value="Asia/Katmandu"/>
+            <StringItem index="435" value="Antarctica/Mawson"/>
+            <StringItem index="436" value="Antarctica/Vostok"/>
+            <StringItem index="437" value="Asia/Almaty"/>
+            <StringItem index="438" value="Asia/Colombo"/>
+            <StringItem index="439" value="Asia/Dacca"/>
+            <StringItem index="440" value="Asia/Dhaka"/>
+            <StringItem index="441" value="Asia/Novosibirsk"/>
+            <StringItem index="442" value="Asia/Omsk"/>
+            <StringItem index="443" value="Asia/Qyzylorda"/>
+            <StringItem index="444" value="Asia/Thimbu"/>
+            <StringItem index="445" value="Asia/Thimphu"/>
+            <StringItem index="446" value="BST"/>
+            <StringItem index="447" value="Etc/GMT-6"/>
+            <StringItem index="448" value="Indian/Chagos"/>
+            <StringItem index="449" value="Asia/Rangoon"/>
+            <StringItem index="450" value="Indian/Cocos"/>
+            <StringItem index="451" value="Antarctica/Davis"/>
+            <StringItem index="452" value="Asia/Bangkok"/>
+            <StringItem index="453" value="Asia/Hovd"/>
+            <StringItem index="454" value="Asia/Jakarta"/>
+            <StringItem index="455" value="Asia/Krasnoyarsk"/>
+            <StringItem index="456" value="Asia/Phnom_Penh"/>
+            <StringItem index="457" value="Asia/Pontianak"/>
+            <StringItem index="458" value="Asia/Saigon"/>
+            <StringItem index="459" value="Asia/Vientiane"/>
+            <StringItem index="460" value="Etc/GMT-7"/>
+            <StringItem index="461" value="Indian/Christmas"/>
+            <StringItem index="462" value="VST"/>
+            <StringItem index="463" value="Antarctica/Casey"/>
+            <StringItem index="464" value="Asia/Brunei"/>
+            <StringItem index="465" value="Asia/Chongqing"/>
+            <StringItem index="466" value="Asia/Chungking"/>
+            <StringItem index="467" value="Asia/Harbin"/>
+            <StringItem index="468" value="Asia/Hong_Kong"/>
+            <StringItem index="469" value="Asia/Irkutsk"/>
+            <StringItem index="470" value="Asia/Kashgar"/>
+            <StringItem index="471" value="Asia/Kuala_Lumpur"/>
+            <StringItem index="472" value="Asia/Kuching"/>
+            <StringItem index="473" value="Asia/Macao"/>
+            <StringItem index="474" value="Asia/Macau"/>
+            <StringItem index="475" value="Asia/Makassar"/>
+            <StringItem index="476" value="Asia/Manila"/>
+            <StringItem index="477" value="Asia/Shanghai"/>
+            <StringItem index="478" value="Asia/Singapore"/>
+            <StringItem index="479" value="Asia/Taipei"/>
+            <StringItem index="480" value="Asia/Ujung_Pandang"/>
+            <StringItem index="481" value="Asia/Ulaanbaatar"/>
+            <StringItem index="482" value="Asia/Ulan_Bator"/>
+            <StringItem index="483" value="Asia/Urumqi"/>
+            <StringItem index="484" value="Australia/Perth"/>
+            <StringItem index="485" value="Australia/West"/>
+            <StringItem index="486" value="CTT"/>
+            <StringItem index="487" value="Etc/GMT-8"/>
+            <StringItem index="488" value="Asia/Choibalsan"/>
+            <StringItem index="489" value="Asia/Dili"/>
+            <StringItem index="490" value="Asia/Jayapura"/>
+            <StringItem index="491" value="Asia/Pyongyang"/>
+            <StringItem index="492" value="Asia/Seoul"/>
+            <StringItem index="493" value="Asia/Tokyo"/>
+            <StringItem index="494" value="Asia/Yakutsk"/>
+            <StringItem index="495" value="Etc/GMT-9"/>
+            <StringItem index="496" value="JST"/>
+            <StringItem index="497" value="Pacific/Palau"/>
+            <StringItem index="498" value="ROK"/>
+            <StringItem index="499" value="ACT"/>
+            <StringItem index="500" value="Australia/Broken_Hill"/>
+            <StringItem index="501" value="Australia/Darwin"/>
+            <StringItem index="502" value="Australia/North"/>
+            <StringItem index="503" value="Australia/South"/>
+            <StringItem index="504" value="Australia/Yancowinna"/>
+            <StringItem index="505" value="AET"/>
+            <StringItem index="506" value="Antarctica/DumontDUrville"/>
+            <StringItem index="507" value="Asia/Sakhalin"/>
+            <StringItem index="508" value="Asia/Vladivostok"/>
+            <StringItem index="509" value="Australia/ACT"/>
+            <StringItem index="510" value="Australia/Brisbane"/>
+            <StringItem index="511" value="Australia/Canberra"/>
+            <StringItem index="512" value="Australia/Hobart"/>
+            <StringItem index="513" value="Australia/Lindeman"/>
+            <StringItem index="514" value="Australia/Melbourne"/>
+            <StringItem index="515" value="Australia/NSW"/>
+            <StringItem index="516" value="Australia/Queensland"/>
+            <StringItem index="517" value="Australia/Sydney"/>
+            <StringItem index="518" value="Australia/Tasmania"/>
+            <StringItem index="519" value="Australia/Victoria"/>
+            <StringItem index="520" value="Etc/GMT-10"/>
+            <StringItem index="521" value="Pacific/Guam"/>
+            <StringItem index="522" value="Pacific/Port_Moresby"/>
+            <StringItem index="523" value="Pacific/Saipan"/>
+            <StringItem index="524" value="Pacific/Truk"/>
+            <StringItem index="525" value="Pacific/Yap"/>
+            <StringItem index="526" value="Australia/LHI"/>
+            <StringItem index="527" value="Australia/Lord_Howe"/>
+            <StringItem index="528" value="Asia/Magadan"/>
+            <StringItem index="529" value="Etc/GMT-11"/>
+            <StringItem index="530" value="Pacific/Efate"/>
+            <StringItem index="531" value="Pacific/Guadalcanal"/>
+            <StringItem index="532" value="Pacific/Kosrae"/>
+            <StringItem index="533" value="Pacific/Noumea"/>
+            <StringItem index="534" value="Pacific/Ponape"/>
+            <StringItem index="535" value="SST"/>
+            <StringItem index="536" value="Pacific/Norfolk"/>
+            <StringItem index="537" value="Antarctica/McMurdo"/>
+            <StringItem index="538" value="Antarctica/South_Pole"/>
+            <StringItem index="539" value="Asia/Anadyr"/>
+            <StringItem index="540" value="Asia/Kamchatka"/>
+            <StringItem index="541" value="Etc/GMT-12"/>
+            <StringItem index="542" value="Kwajalein"/>
+            <StringItem index="543" value="NST"/>
+            <StringItem index="544" value="NZ"/>
+            <StringItem index="545" value="Pacific/Auckland"/>
+            <StringItem index="546" value="Pacific/Fiji"/>
+            <StringItem index="547" value="Pacific/Funafuti"/>
+            <StringItem index="548" value="Pacific/Kwajalein"/>
+            <StringItem index="549" value="Pacific/Majuro"/>
+            <StringItem index="550" value="Pacific/Nauru"/>
+            <StringItem index="551" value="Pacific/Tarawa"/>
+            <StringItem index="552" value="Pacific/Wake"/>
+            <StringItem index="553" value="Pacific/Wallis"/>
+            <StringItem index="554" value="NZ-CHAT"/>
+            <StringItem index="555" value="Pacific/Chatham"/>
+            <StringItem index="556" value="Etc/GMT-13"/>
+            <StringItem index="557" value="Pacific/Enderbury"/>
+            <StringItem index="558" value="Pacific/Tongatapu"/>
+            <StringItem index="559" value="Etc/GMT-14"/>
+            <StringItem index="560" value="Pacific/Kiritimati"/>
+          </StringArray>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="timeZoneComboselectTimeZone"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="timeZoneCombo.setOpaque(false);&#xa;//timeZoneCombo.setBackground(new Color(0,0,0,0));&#xa;timeZoneCombo.setForeground(new Color(0, 255, 255));"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
