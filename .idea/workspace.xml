@@ -2,7 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23357f51-4054-4932-b1ee-a43694c14299" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/daySong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daySong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Settings.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Time.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/alarmClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/alarmClock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Timeclass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Timeclass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Properties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Properties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Songfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Songfilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Time.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/alarmClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/alarmClock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,105 +92,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dismissAlarm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Time.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1586">
-              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alarmClock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/daySong.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2348">
-              <caret line="546" selection-start-line="546" selection-end-line="546" />
-              <folding>
-                <element signature="e#1399#1429#0" expanded="true" />
-                <element signature="e#5104#5105#0" expanded="true" />
-                <element signature="e#5161#5162#0" expanded="true" />
-                <element signature="e#5594#5595#0" expanded="true" />
-                <element signature="e#5651#5652#0" expanded="true" />
-                <element signature="e#6084#6085#0" expanded="true" />
-                <element signature="e#6141#6142#0" expanded="true" />
-                <element signature="e#6574#6575#0" expanded="true" />
-                <element signature="e#6631#6632#0" expanded="true" />
-                <element signature="e#7064#7065#0" expanded="true" />
-                <element signature="e#7121#7122#0" expanded="true" />
-                <element signature="e#7554#7555#0" expanded="true" />
-                <element signature="e#7611#7612#0" expanded="true" />
-                <element signature="e#8045#8046#0" expanded="true" />
-                <element signature="e#8102#8103#0" expanded="true" />
-                <element signature="e#8550#8551#0" expanded="true" />
-                <element signature="e#8613#8614#0" expanded="true" />
-                <element signature="e#9513#9514#0" expanded="true" />
-                <element signature="e#9576#9577#0" expanded="true" />
-                <element signature="e#10229#10230#0" expanded="true" />
-                <element signature="e#10292#10293#0" expanded="true" />
-                <element signature="e#11020#11021#0" expanded="true" />
-                <element signature="e#11084#11085#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Settings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8632">
-              <caret line="362" column="32" selection-start-line="362" selection-start-column="32" selection-end-line="362" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Properties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -161,6 +106,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="35d40814-414e-4a51-aa7e-b07a3d3dfcb8" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -185,6 +133,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,19 +147,11 @@
               <item name="DigitalClock" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DigitalClock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DigitalClock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="daySong.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,14 +252,20 @@
       <option name="project" value="LOCAL" />
       <updated>1542520886864</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merge branch 'master' of https://github.com/Eunoia1729/DigitalClock&#10;&#10;# Conflicts:&#10;#&#9;build/classes/Time.class&#10;#&#9;nbproject/private/private.properties&#10;#&#9;nbproject/private/private.xml&#10;#&#9;nbproject/project.properties">
+      <created>1542693699444</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542693699444</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.257886" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -351,7 +299,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modified UI and resolved all merge conflicts." />
     <MESSAGE value="Added edit and offline functionality in alarm." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added edit and offline functionality in alarm." />
+    <MESSAGE value="Merge branch 'master' of https://github.com/Eunoia1729/DigitalClock&#10;&#10;# Conflicts:&#10;#&#9;build/classes/Time.class&#10;#&#9;nbproject/private/private.properties&#10;#&#9;nbproject/private/private.xml&#10;#&#9;nbproject/project.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Eunoia1729/DigitalClock&#10;&#10;# Conflicts:&#10;#&#9;build/classes/Time.class&#10;#&#9;nbproject/private/private.properties&#10;#&#9;nbproject/private/private.xml&#10;#&#9;nbproject/project.properties" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MainClass.java">
