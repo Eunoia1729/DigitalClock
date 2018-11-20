@@ -48,9 +48,9 @@ public class MainClass extends javax.swing.JFrame implements ItemListener{
                     }
                     String day=clock.getDay();
                     dateLabel.setText(day);
-                    timeLabel.setBackground(clock.getProperties().getBgColor());
-                    timeLabel.setForeground(clock.getProperties().getTextColor());
                     mainPanel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),clock.getProperties().getBorderSize()));
+                    getContentPane().setBackground(clock.getProperties().getBgColor());
+                    timeLabel.setForeground(clock.getProperties().getTextColor());
                     timeLabel.setFont(clock.getProperties().getFont());
                     dateLabel.setForeground(clock.getProperties().getTextColor());
                     dateLabel.setFont(new Font(clock.getProperties().getFont().getFamily(),0,30));

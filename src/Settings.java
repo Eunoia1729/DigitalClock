@@ -34,6 +34,7 @@ public class Settings extends javax.swing.JDialog {
         super((javax.swing.JFrame)null);
         this.clock = clock;
         font =  clock.getProperties().getFont();
+        borderSize = clock.getProperties().getBorderSize();
         initComponents();
         //lblPreview.setFont(font);
     }
@@ -541,7 +542,7 @@ public class Settings extends javax.swing.JDialog {
             "JColorChooser Sample",initialBorderColor);
         if (borderColor != null) {
           borderColorBtn.setBackground(borderColor);
-          preview.setBorder(new LineBorder(borderColor,3));
+          preview.setBorder(new LineBorder(borderColor,borderSize));
         }
     }//GEN-LAST:event_borderColorBtnActionPerformed
 
