@@ -3,49 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23357f51-4054-4932-b1ee-a43694c14299" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Settings.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Settings.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/Time.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/alarmClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/alarmClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Timeclass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer$Timeclass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/GUITimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/MainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Properties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Properties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Songfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Songfilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/Time.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/alarmClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/alarmClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DigitalClock_new/daySong.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stopwatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopwatch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,9 +48,40 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
+    <session id="1217184448">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/stopwatch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1880">
+              <caret line="273" selection-start-line="273" selection-end-line="273" />
+              <folding>
+                <element signature="e#2703#2733#0" expanded="true" />
+                <element signature="e#3825#3826#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#4075#4076#0" expanded="true" />
+                <element signature="e#4132#4133#0" expanded="true" />
+                <element signature="e#10669#10670#0" expanded="true" />
+                <element signature="e#10733#10734#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -119,6 +108,7 @@
         <option value="$PROJECT_DIR$/src/input.txt" />
         <option value="$PROJECT_DIR$/src/alarmClock.java" />
         <option value="$PROJECT_DIR$/src/daySong.java" />
+        <option value="$PROJECT_DIR$/src/stopwatch.java" />
       </list>
     </option>
   </component>
@@ -155,7 +145,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542494040511" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542698916439" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../VarDigi/DigitalClock-master (1)/DigitalClock-master" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
@@ -259,11 +249,26 @@
       <option name="project" value="LOCAL" />
       <updated>1542693699444</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge branch 'master' of https://github.com/Eunoia1729/DigitalClock&#10;&#10;# Conflicts:&#10;#&#9;build/classes/Time.class&#10;#&#9;nbproject/private/private.properties&#10;#&#9;nbproject/private/private.xml&#10;#&#9;nbproject/project.properties">
+      <created>1542694533093</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542694533093</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge branch 'master' of https://github.com/Eunoia1729/DigitalClock&#10;&#10;# Conflicts:&#10;#&#9;build/classes/Time.class&#10;#&#9;nbproject/private/private.properties&#10;#&#9;nbproject/private/private.xml&#10;#&#9;nbproject/project.properties">
+      <created>1542698243650</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542698243650</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -380,6 +385,22 @@
             <element signature="e#10292#10293#0" expanded="true" />
             <element signature="e#11020#11021#0" expanded="true" />
             <element signature="e#11084#11085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stopwatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1880">
+          <caret line="273" selection-start-line="273" selection-end-line="273" />
+          <folding>
+            <element signature="e#2703#2733#0" expanded="true" />
+            <element signature="e#3825#3826#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#4075#4076#0" expanded="true" />
+            <element signature="e#4132#4133#0" expanded="true" />
+            <element signature="e#10669#10670#0" expanded="true" />
+            <element signature="e#10733#10734#0" expanded="true" />
           </folding>
         </state>
       </provider>
