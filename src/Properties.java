@@ -19,7 +19,8 @@ public class Properties {
     private Color borderColor = Color.WHITE;
     private Color textColor=Color.CYAN;
     private Font font;
-    
+    private int borderSize = 5;
+   
      
     public Color getBgColor() {
         return bgColor;
@@ -53,6 +54,15 @@ public class Properties {
         this.font = font;
     }
 
+    public int getBorderSize() {
+        return borderSize;
+    }
+
+    public void setBorderSize(int borderSize) {
+        this.borderSize = borderSize;
+    }
+    
+    
     public Properties() {
         String filename="font_file.ttf";
         

@@ -50,7 +50,7 @@ public class MainClass extends javax.swing.JFrame implements ItemListener{
                     dateLabel.setText(day);
                     timeLabel.setBackground(clock.getProperties().getBgColor());
                     timeLabel.setForeground(clock.getProperties().getTextColor());
-                    mainPanel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),5));
+                    mainPanel.setBorder(new LineBorder(clock.getProperties().getBorderColor(),clock.getProperties().getBorderSize()));
                     timeLabel.setFont(clock.getProperties().getFont());
                     dateLabel.setForeground(clock.getProperties().getTextColor());
                     dateLabel.setFont(new Font(clock.getProperties().getFont().getFamily(),0,30));
@@ -221,10 +221,10 @@ public class MainClass extends javax.swing.JFrame implements ItemListener{
                         .addGap(73, 73, 73)
                         .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 16, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(185, 185, 185)
                 .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

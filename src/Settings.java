@@ -13,6 +13,7 @@ public class Settings extends javax.swing.JDialog {
     private Clock clock = new Clock();
     private Font font;
     private Properties defaultProperties = new Properties();
+    private int borderSize;
     //Constructors
     /** Creates new form JFontChooser */
     public Settings(java.awt.Frame parent, Font font) {
@@ -84,6 +85,8 @@ public class Settings extends javax.swing.JDialog {
         styleList = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         sizeList = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        borderSizeList = new javax.swing.JList<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -91,6 +94,8 @@ public class Settings extends javax.swing.JDialog {
         styleLabel = new javax.swing.JTextField();
         fontLabel = new javax.swing.JTextField();
         sizeLabel = new javax.swing.JTextField();
+        borderSizeLabel = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         preview = new javax.swing.JTextField();
@@ -251,18 +256,33 @@ public class Settings extends javax.swing.JDialog {
         });
         jScrollPane3.setViewportView(sizeList);
 
+        borderSizeList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        borderSizeList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        borderSizeList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                borderSizeListValueChanged(evt);
+            }
+        });
+        jScrollPane5.setViewportView(borderSizeList);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,8 +291,9 @@ public class Settings extends javax.swing.JDialog {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane3)
                     .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Font Name");
@@ -299,6 +320,21 @@ public class Settings extends javax.swing.JDialog {
 
         sizeLabel.setText(String.valueOf(clock.getProperties().getFont().getSize()));
         sizeLabel.setEditable(false);
+        sizeLabel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sizeLabelActionPerformed(evt);
+            }
+        });
+
+        borderSizeLabel.setText(String.valueOf(clock.getProperties().getBorderSize()));
+        borderSizeLabel.setEditable(false);
+        borderSizeLabel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borderSizeLabelActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Border Size");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -307,36 +343,39 @@ public class Settings extends javax.swing.JDialog {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(fontLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6)
-                            .addComponent(styleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(281, 281, 281)
-                        .addComponent(jLabel7)))
+                    .addComponent(fontLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(styleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(borderSizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(styleLabel)
-                        .addComponent(sizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(fontLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fontLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(styleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(borderSizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -431,21 +470,19 @@ public class Settings extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(resetBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(okbtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelbtn)
-                        .addGap(23, 23, 23))))
+                        .addComponent(cancelbtn)))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -572,6 +609,7 @@ public class Settings extends javax.swing.JDialog {
         clock.getProperties().setBgColor(bgColorBtn.getBackground());
         clock.getProperties().setBorderColor(borderColorBtn.getBackground());
         clock.getProperties().setTextColor(textColorBtn.getBackground());
+        clock.getProperties().setBorderSize(borderSize);
         dispose();
     }//GEN-LAST:event_okbtnActionPerformed
 
@@ -587,15 +625,31 @@ public class Settings extends javax.swing.JDialog {
         preview.setForeground(defaultProperties.getTextColor());
         preview.setBackground(defaultProperties.getBgColor());
         preview.setFont(defaultProperties.getFont());
-        preview.setBorder(new LineBorder(defaultProperties.getBorderColor(),3));
+        preview.setBorder(new LineBorder(defaultProperties.getBorderColor(),defaultProperties.getBorderSize()));
         bgColorBtn.setBackground(defaultProperties.getBgColor());
         borderColorBtn.setBackground(defaultProperties.getBorderColor());
         textColorBtn.setBackground(defaultProperties.getTextColor());
         fontLabel.setText(defaultProperties.getFont().getFamily());
         styleLabel.setText(defaultProperties.getStyleName());
         sizeLabel.setText(String.valueOf(defaultProperties.getFont().getSize()));
+        borderSizeLabel.setText(String.valueOf(defaultProperties.getBorderSize()));
         font  = defaultProperties.getFont();
     }//GEN-LAST:event_resetBtnActionPerformed
+
+    private void sizeLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sizeLabelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sizeLabelActionPerformed
+
+    private void borderSizeLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borderSizeLabelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_borderSizeLabelActionPerformed
+
+    private void borderSizeListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_borderSizeListValueChanged
+        int size = Integer.parseInt((String)borderSizeList.getSelectedValue());
+        borderSizeLabel.setText(String.valueOf(size));
+        preview.setBorder(new LineBorder(borderColorBtn.getBackground(),size));
+        borderSize = size;
+    }//GEN-LAST:event_borderSizeListValueChanged
     
     private void doClose(int retStatus) {
         returnStatus = retStatus;
@@ -613,6 +667,8 @@ public class Settings extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bgColorBtn;
     private javax.swing.JButton borderColorBtn;
+    private javax.swing.JTextField borderSizeLabel;
+    private javax.swing.JList<String> borderSizeList;
     private javax.swing.JButton cancelbtn;
     private javax.swing.JTextField fontLabel;
     private javax.swing.JList<String> fontList;
@@ -624,6 +680,7 @@ public class Settings extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -634,6 +691,7 @@ public class Settings extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JButton okbtn;
     private javax.swing.JTextField preview;
     private javax.swing.JLabel previewText;
