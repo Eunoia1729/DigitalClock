@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Prasanna/DigitalClock/src/MainClass.java</file>
-            <file>file:/C:/Users/Prasanna/DigitalClock/src/Properties.java</file>
-            <file>file:/C:/Users/Prasanna/DigitalClock/src/Time.java</file>
-            <file>file:/C:/Users/Prasanna/DigitalClock/src/daySong.java</file>
-            <file>file:/C:/Users/Prasanna/DigitalClock/src/Clock.java</file>
+            <file>file:/home/dagger/Documents/praDigi/DigitalClock/src/Properties.java</file>
+            <file>file:/home/dagger/Documents/praDigi/DigitalClock/src/MainClass.java</file>
+            <file>file:/home/dagger/Documents/praDigi/DigitalClock/src/Time.java</file>
+            <file>file:/home/dagger/Documents/praDigi/DigitalClock/src/Settings.java</file>
         </group>
     </open-files>
 </project-private>
