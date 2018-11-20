@@ -49,7 +49,7 @@ public class alarmClock extends javax.swing.JFrame {
         String song1 = "";
         for(i = 0; i < alarms.size(); ++i)
         {
-            if( alarms.get(i).getHours() == Time1.getHours() && alarms.get(i).getMinutes() == Time1.getMinutes() && 
+            if( alarms.get(i).getHours() == (Time1.getHours() + 12) && alarms.get(i).getMinutes() == Time1.getMinutes() && 
                     alarms.get(i).getSeconds() == Time1.getSeconds() && alarms.get(i).getFlag() == 0
                     && alarms.get(i).getDay().compareTo(Time1.getDay()) == 0)
             {

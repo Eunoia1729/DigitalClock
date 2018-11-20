@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.FileNotFoundException;
@@ -38,6 +39,7 @@ public class EditAlarmDialog extends javax.swing.JDialog {
 
     private EditAlarmDialog(JFrame jFrame, boolean b) {
         super(jFrame, b);
+        getContentPane().setBackground(Color.black);
         initComponents();
     }
 
@@ -60,7 +62,12 @@ public class EditAlarmDialog extends javax.swing.JDialog {
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
         jScrollPane1.setViewportView(jPanel1);
 
+        removeBtn.setBackground(new java.awt.Color(0, 0, 0));
+        removeBtn.setForeground(new java.awt.Color(0, 0, 0));
         removeBtn.setText("Remove");
+        removeBtn.setOpaque(false);
+        removeBtn.setContentAreaFilled(false);
+        removeBtn.setBorderPainted(false);
         removeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeBtnActionPerformed(evt);
@@ -180,6 +187,8 @@ public class EditAlarmDialog extends javax.swing.JDialog {
             jCheckBox.setText(text);
             Font curFont = jCheckBox.getFont();
             jCheckBox.setFont(new Font(curFont.getFamily(),curFont.getStyle(),20));
+            jCheckBox.setBackground(Color.black);
+            jCheckBox.setForeground(Color.black);
             jCheckBoxs.add(jCheckBox);
             jPanel1.add(jCheckBox);
             jPanel1.revalidate();

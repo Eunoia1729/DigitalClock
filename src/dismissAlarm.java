@@ -1,4 +1,5 @@
 import jaco.mp3.player.MP3Player;
+import java.awt.Color;
 import java.util.ArrayList;
 
 /*
@@ -21,6 +22,7 @@ public class dismissAlarm extends javax.swing.JFrame {
     private int ind;
     public dismissAlarm(ArrayList<Time> alarms1, MP3Player mp3Player1 , int ind1) {
         initComponents();
+        getContentPane().setBackground(Color.black);
         this.alarms = alarms1;
         this.mp3Player = mp3Player1;
         this.ind = ind1;
@@ -41,15 +43,21 @@ public class dismissAlarm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
+        dismissButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        dismissButton.setForeground(new java.awt.Color(0, 255, 255));
         dismissButton.setText("Dismiss Alarm");
+        dismissButton.setOpaque(false);
+        dismissButton.setContentAreaFilled(false);
+        dismissButton.setBorderPainted(false);
         dismissButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dismissButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/kumar_raju/Desktop/DigitalClock/media/alarms2.gif")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/kumar_raju/Documents/javacodes/DigitalClock/media/alarms2.gif")); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -68,9 +76,9 @@ public class dismissAlarm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(dismissButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(16, 16, 16))
         );
 
         pack();
