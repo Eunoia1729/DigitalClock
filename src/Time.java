@@ -1,4 +1,3 @@
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
@@ -59,6 +58,14 @@ class Time {
         }
 
             }
+
+    Time(String time, String day) {
+        String[] ti = time.split(":");
+        hours = Integer.valueOf(ti[0]);
+        minutes = Integer.valueOf(ti[1]);
+        seconds = Integer.valueOf(ti[2]);
+        this.day = day;
+    }
 
     public int getFlag() {
         return flag;
