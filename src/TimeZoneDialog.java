@@ -50,7 +50,7 @@ public class TimeZoneDialog extends javax.swing.JDialog {
         setTitle("Select Time Zone");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setText("Time Format: ");
+        jLabel1.setText("Time Zone: ");
 
         timeZoneCombo.setFont(new java.awt.Font("MS UI Gothic", 1, 11)); // NOI18N
         timeZoneCombo.setForeground(new java.awt.Color(0, 255, 255));
@@ -74,7 +74,7 @@ public class TimeZoneDialog extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(timeZoneCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
