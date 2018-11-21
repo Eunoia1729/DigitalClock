@@ -91,6 +91,7 @@ public class alarmClock extends javax.swing.JFrame {
         daySelect = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setBackground(new java.awt.Color(0, 0, 0));
@@ -344,8 +345,10 @@ public class alarmClock extends javax.swing.JFrame {
         }
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println(String.valueOf(alarms.size()));
+        //printWriter.print(String.valueOf(alarms.size())+"<br/>");
         for(Time time : alarms) {
             printWriter.println(time.toString()+ " " + time.getDay());
+            //printWriter.print(time.toString()+ " " + time.getDay()+"<br/>");
         }
         printWriter.close();
     }

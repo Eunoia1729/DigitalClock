@@ -58,7 +58,49 @@ class Time {
         }
 
             }
+    Time(String timeZone, int val){
+        //System.out.println(timeZone);
+        this.timeZone=timeZone;
+        Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone(timeZone));
+        hours = calendar.get(Calendar.HOUR);
+        String am=stringConvert(am_pm);
+        if(am.equals("01"))
+             hours = calendar.get(Calendar.HOUR) + 12;
+        minutes = calendar.get(Calendar.MINUTE);
+        am_pm=calendar.get(Calendar.AM_PM);
+        seconds = calendar.get(Calendar.SECOND);
+        dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        month = calendar.get(Calendar.MONTH);
+        year = calendar.get(Calendar.YEAR);
+        date= calendar.get(Calendar.DATE);
+        flag = 0;
+        int day1 = calendar.get(Calendar.DAY_OF_WEEK);
+        switch (day1)
+        {
+            case Calendar.SUNDAY:
+                day = "Sunday";
+                break;
+            case Calendar.MONDAY:
+                day = "Monday";
+                break;
+            case Calendar.TUESDAY:
+                day = "Tuesday";
+                break;
+            case Calendar.WEDNESDAY:
+                day = "Wednesday";
+                break;
+            case Calendar.THURSDAY:
+                day = "Thursday";
+                break;
+            case Calendar.FRIDAY:
+                day = "Friday";
+                break;
+            case Calendar.SATURDAY:
+                day = "Saturday";
+                break;
+        }
 
+        }
     Time(String time, String day) {
         String[] ti = time.split(":");
         hours = Integer.valueOf(ti[0]);

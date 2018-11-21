@@ -23,6 +23,10 @@ public class Clock {
         time = new Time(timeZone);
         return time;
     }
+    public Time getTime(String timeZone, int val) {
+        time = new Time(timeZone, val);
+        return time;
+    }
     
     public String getDay()
     {

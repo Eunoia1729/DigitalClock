@@ -54,7 +54,7 @@ public class MainClass extends javax.swing.JFrame implements ItemListener{
                     timeLabel.setFont(clock.getProperties().getFont());
                     dateLabel.setForeground(clock.getProperties().getTextColor());
                     dateLabel.setFont(new Font(clock.getProperties().getFont().getFamily(),0,30));
-                    alarmC.checkAlarm(clock.getTime(timeZone), day);
+                    alarmC.checkAlarm(clock.getTime(timeZone, timeFormat), day);
                 }
             }
         }.start();
