@@ -19,3 +19,10 @@ Java, Swing
 **Project Tasks**
 
 Use case analysis, Design (Using CRC & Class Diagrams), Implementation, and User Interface.
+
+
+
+**NOTE:**
+
+Attach the jacoplayer provided in the repository as a library to the project before using.
+Do feel free to open issues. Happy Hustling ! 
